@@ -429,75 +429,83 @@ export default function DeansBrookSchoolLanding() {
       </nav>
 
       {/* ─── 2. HERO ──────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-mustard/10 via-white to-transparent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
 
-            <div className="lg:col-span-7 text-center lg:text-left space-y-6">
-              <div className="inline-flex items-center space-x-2 bg-mustard/20 text-navy px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase">
-                <span>🏫 Our MOTTO: Knowledge for life</span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-navy tracking-tight leading-[1.1]">
-                <span className="block">PLAY, LEARN</span>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-mustard to-mustard/70">&amp; GROW</span>
-              </h1>
-              <p className="text-base sm:text-lg text-navy/70 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">
-                Deansbrook Schools – two campuses in Mombasa offering a caring, CBC‑based education that nurtures confident, responsible global citizens.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-2">
-                <a
-                  href="#classes"
-                  className="bg-mustard hover:bg-mustard/90 text-navy font-extrabold px-8 py-4 rounded-2xl shadow-xl shadow-mustard/30 transition-all flex items-center justify-center space-x-2 group text-base"
-                >
-                  <span>Explore More</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a
-                  href="#about"
-                  className="bg-white hover:bg-slate-50 text-navy border-2 border-navy/20 font-bold px-8 py-4 rounded-2xl transition-all text-base text-center"
-                >
-                  Get in Touch
-                </a>
-              </div>
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="./landing.jpg"
+            alt="Deansbrook School"
+            className="w-full h-full object-cover brightness-50"
+          />
+        </div>
 
-              <div className="grid grid-cols-3 gap-4 pt-6 max-w-md mx-auto lg:mx-0 border-t border-navy/10">
-                <div>
-                  <p className="text-2xl font-extrabold text-navy">2</p>
-                  <p className="text-xs text-navy/50 font-medium">Campuses</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-extrabold text-navy">500+</p>
-                  <p className="text-xs text-navy/50 font-medium">Students</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-extrabold text-navy">98%</p>
-                  <p className="text-xs text-navy/50 font-medium">Parent Satisfaction</p>
-                </div>
-              </div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/40" />
+
+        {/* Optional mustard tint */}
+        <div className="absolute inset-0 bg-mustard/10" />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="max-w-3xl text-center lg:text-left space-y-8">
+
+            <div className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border border-white/20">
+              <span>🏫 Our Motto: Knowledge for Life</span>
             </div>
 
-            <div className="lg:col-span-5 relative flex justify-center">
-              <div className="absolute inset-0 bg-gradient-to-tr from-mustard to-mustard/40 rounded-full blur-3xl opacity-20 -z-10 transform scale-90" />
-              <div className="relative bg-white border-4 border-mustard/30 p-4 rounded-[2.5rem] shadow-2xl shadow-mustard/10 max-w-sm sm:max-w-md">
-                <img
-                  src="./landing.jpg"
-                  alt="Deansbrook School Campus"
-                  className="rounded-[2rem] object-cover w-full h-[400px] sm:h-[450px] w-[450px] sm:w-[500px]"
-                />
-                <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg border border-mustard/20 flex items-center space-x-3 max-w-[220px]">
-                  <div className="bg-mustard text-navy p-2.5 rounded-xl">
-                    <Award className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-navy/50 uppercase tracking-wider">CBC Certified</p>
-                    <p className="text-sm font-extrabold text-navy">Quality Education</p>
-                  </div>
-                </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-white">
+              PLAY,
+              <br />
+              <span className="text-mustard">LEARN & GROW</span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
+              Deansbrook Schools is a leading CBC institution in Mombasa,
+              providing quality education in a nurturing environment where every
+              learner is inspired to achieve excellence academically,
+              socially, and morally.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#classes"
+                className="bg-mustard hover:bg-mustard/90 text-navy font-bold px-8 py-4 rounded-xl transition duration-300 flex items-center justify-center gap-2 shadow-xl"
+              >
+                Explore More
+                <ArrowRight className="w-5 h-5" />
+              </a>
+
+              <a
+                href="#about"
+                className="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 rounded-xl font-bold transition duration-300"
+              >
+                Get in Touch
+              </a>
+            </div>
+
+            {/* Statistics */}
+            <div className="grid grid-cols-3 gap-8 pt-10 border-t border-white/20 max-w-lg">
+              <div>
+                <h3 className="text-3xl font-black text-mustard">2</h3>
+                <p className="text-white/80 text-sm">Campuses</p>
+              </div>
+
+              <div>
+                <h3 className="text-3xl font-black text-mustard">500+</h3>
+                <p className="text-white/80 text-sm">Students</p>
+              </div>
+
+              <div>
+                <h3 className="text-3xl font-black text-mustard">98%</h3>
+                <p className="text-white/80 text-sm">Parent Satisfaction</p>
               </div>
             </div>
 
           </div>
         </div>
+
+
       </section>
 
 
