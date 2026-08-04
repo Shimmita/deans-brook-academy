@@ -1,32 +1,32 @@
 "use client";
 
-import React, { useState } from 'react';
 import {
-  Rocket,
-  CheckCircle,
-  MapPin,
-  Phone,
-  Mail,
-  Menu,
-  X,
   ArrowRight,
   Award,
-  Users,
-  Lightbulb,
-  Star,
-  MessageCircle,
-  HelpCircle,
+  BookOpen,
+  Calendar,
+  CheckCircle,
   ChevronDown,
   ChevronUp,
-  Quote,
-  Calendar,
   GraduationCap,
-  BookOpen,
-  School
+  HelpCircle,
+  Lightbulb,
+  Mail,
+  MapPin,
+  Menu,
+  MessageCircle,
+  Phone,
+  Quote,
+  Rocket,
+  School,
+  Star,
+  Users,
+  X
 } from 'lucide-react';
+import React, { useState } from 'react';
 
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa6';
 import Image from 'next/image';
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa6';
 
 // ─── DATA ──────────────────────────────────────────────────────────────
 
@@ -50,14 +50,177 @@ const CLASSES = [
     desc: "Preparing students for higher learning with a robust curriculum, critical thinking, and co-curricular excellence."
   }
 ];
-
 const GALLERY_ITEMS = [
-  { id: 1, type: 'campus', title: 'Bamburi Campus', img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=600' },
-  { id: 2, type: 'classroom', title: 'Interactive Learning', img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=600' },
-  { id: 3, type: 'events', title: 'Sports Day', img: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=600' },
-  { id: 4, type: 'campus', title: 'Kiembeni Campus', img: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&q=80&w=600' },
-  { id: 5, type: 'classroom', title: 'Art & Craft', img: 'https://images.unsplash.com/photo-1523050854058-8df90110c7f1?auto=format&fit=crop&q=80&w=600' },
-  { id: 6, type: 'events', title: 'Graduation Ceremony', img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600' },
+  {
+    id: 1,
+    type: 'campus',
+    title: 'Main Campus',
+    img: './landing.jpg',
+  },
+  {
+    id: 2,
+    type: '',
+    title: '',
+    img: './other_13.jpg',
+  },
+
+  {
+    id: 3,
+    type: 'events',
+    title: 'Annual Sports Day',
+    img: './sports_1.jpg',
+  },
+
+  {
+    id: 4,
+    type: '',
+    title: '',
+    img: './other_11.jpg',
+  },
+
+
+  {
+    id: 6,
+    type: '',
+    title: '',
+    img: './other_8.jpg',
+  },
+  {
+    id: 7,
+    type: '',
+    title: '',
+    img: './other_7.jpg',
+  },
+  {
+    id: 8,
+    type: '',
+    title: '',
+    img: './other_6.jpg',
+  },
+  {
+    id: 9,
+    type: '',
+    title: '',
+    img: './other_5.jpg',
+  },
+  {
+    id: 10,
+    type: '',
+    title: '',
+    img: './other_4.jpg',
+  },
+  {
+    id: 11,
+    type: 'sports',
+    title: 'Football Training',
+    img: './sports.jpg',
+  },
+  {
+    id: 12,
+    type: 'swimming',
+    title: 'Swimming Lessons',
+    img: './swimming.jpg',
+  },
+  {
+    id: 13,
+    type: 'assembly',
+    title: 'Morning Assembly',
+    img: './assembly.jpg',
+  },
+  {
+    id: 14,
+    type: 'clubs',
+    title: 'Debate Club',
+    img: './debate.jpg',
+  },
+  {
+    id: 15,
+    type: 'excursion',
+    title: 'Educational Trip',
+    img: './trip.jpg',
+  },
+  {
+    id: 16,
+    type: 'kindergarten',
+    title: 'Early Learning Centre',
+    img: './other_9.jpg',
+  },
+  {
+    id: 17,
+    type: '',
+    title: '',
+    img: './other_2.jpg',
+  },
+  {
+    id: 18,
+    type: '',
+    title: '',
+    img: './other_3.jpg',
+  },
+  {
+    id: 19,
+    type: 'awards',
+    title: 'Academic Awards',
+    img: './awards.jpg',
+  },
+  {
+    id: 20,
+    type: '',
+    title: '',
+    img: './other_1.jpg',
+  },
+
+
+  {
+    id: 22,
+    type: '',
+    title: '',
+    img: './other_17.jpg',
+  },
+
+  {
+    id: 24,
+    type: '',
+    title: '',
+    img: './more_2.jpg',
+  },
+  {
+    id: 23,
+    type: '',
+    title: '',
+    img: './more_1.jpg',
+  },
+  {
+    id: 25,
+    type: '',
+    title: '',
+    img: './more_3.jpg',
+  },
+  {
+    id: 21,
+    type: '',
+    title: '',
+    img: './other_15.jpg',
+  },
+  {
+    id: 26,
+    type: '',
+    title: '',
+    img: './more_4.jpg',
+  },
+  {
+    id: 27,
+    type: '',
+    title: '',
+    img: './other_2.jpg',
+  },
+  {
+    id: 28,
+    type: '',
+    title: '',
+    img: './another.jpg',
+  },
+
 ];
 
 
@@ -317,9 +480,9 @@ export default function DeansBrookSchoolLanding() {
               <div className="absolute inset-0 bg-gradient-to-tr from-mustard to-mustard/40 rounded-full blur-3xl opacity-20 -z-10 transform scale-90" />
               <div className="relative bg-white border-4 border-mustard/30 p-4 rounded-[2.5rem] shadow-2xl shadow-mustard/10 max-w-sm sm:max-w-md">
                 <img
-                  src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=800"
+                  src="./landing.jpg"
                   alt="Deansbrook School Campus"
-                  className="rounded-[2rem] object-cover w-full h-[350px] sm:h-[420px]"
+                  className="rounded-[2rem] object-cover w-full h-[400px] sm:h-[450px] w-[450px] sm:w-[500px]"
                 />
                 <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg border border-mustard/20 flex items-center space-x-3 max-w-[220px]">
                   <div className="bg-mustard text-navy p-2.5 rounded-xl">
@@ -451,7 +614,7 @@ export default function DeansBrookSchoolLanding() {
         </div>
       </section>
 
-      
+
 
 
 
@@ -571,86 +734,86 @@ export default function DeansBrookSchoolLanding() {
           </div>
 
           {/* ─── 4. ABOUT US ──────────────────────────────────────── */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <h2 className="text-xs uppercase font-extrabold text-mustard tracking-widest">Welcome To Deansbrook Schools</h2>
-            <p className="text-3xl sm:text-4xl font-black text-navy tracking-tight">
-              About Us
-            </p>
-            <div className="w-16 h-1 bg-mustard mx-auto rounded-full" />
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl font-extrabold text-navy">Our Vision</h3>
-                <p className="text-navy/70 text-base leading-relaxed mt-2">
-                  To be the preferred school of choice empowering students with knowledge, skills and values that enable them achieve their full potential and become responsible global citizens.
+          <section id="about" className="py-20 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 className="text-xs uppercase font-extrabold text-mustard tracking-widest">Welcome To Deansbrook Schools</h2>
+                <p className="text-3xl sm:text-4xl font-black text-navy tracking-tight">
+                  About Us
                 </p>
+                <div className="w-16 h-1 bg-mustard mx-auto rounded-full" />
               </div>
-              <div>
-                <h3 className="text-2xl font-extrabold text-navy">Our Mission</h3>
-                <p className="text-navy/70 text-base leading-relaxed mt-2">
-                  We provide students with a broad range of learning experiences that enable them to develop their full potential in a caring environment where everyone is valued and respected.
-                </p>
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl font-extrabold text-navy">Our Campuses</h3>
-                <ul className="space-y-3 text-navy/70 text-base">
-                  <li className="flex items-start space-x-3">
-                    <span className="text-mustard font-bold">•</span>
-                    <span><strong>Bamburi Campus</strong> – opposite Bamburi Cement Factory. Kindergarten school offering CBC system with qualified teachers.</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <span className="text-mustard font-bold">•</span>
-                    <span><strong>Kiembeni Campus</strong> – past the Police Post. Spacious classrooms, well‑equipped outdoor playground, and secured perimeter wall.</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-mustard/5 p-6 rounded-2xl border border-mustard/20">
-                <p className="text-navy/80 text-sm italic">
-                  &quot;We don’t just teach – we inspire. Every day is fresh and inspiring, and our efforts are geared towards keeping our students enthralled, hungry and engaged.&quot;
-                </p>
-              </div>
-            </div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-mustard/5 p-8 rounded-2xl border border-mustard/20 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-mustard text-navy flex items-center justify-center shadow-md">
-                <Lightbulb className="w-6 h-6" />
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-2xl font-extrabold text-navy">Our Vision</h3>
+                    <p className="text-navy/70 text-base leading-relaxed mt-2">
+                      To be the preferred school of choice empowering students with knowledge, skills and values that enable them achieve their full potential and become responsible global citizens.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-extrabold text-navy">Our Mission</h3>
+                    <p className="text-navy/70 text-base leading-relaxed mt-2">
+                      We provide students with a broad range of learning experiences that enable them to develop their full potential in a caring environment where everyone is valued and respected.
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-2xl font-extrabold text-navy">Our Campuses</h3>
+                    <ul className="space-y-3 text-navy/70 text-base">
+                      <li className="flex items-start space-x-3">
+                        <span className="text-mustard font-bold">•</span>
+                        <span><strong>Bamburi Campus</strong> – opposite Bamburi Cement Factory. Kindergarten school offering CBC system with qualified teachers.</span>
+                      </li>
+                      <li className="flex items-start space-x-3">
+                        <span className="text-mustard font-bold">•</span>
+                        <span><strong>Kiembeni Campus</strong> – past the Police Post. Spacious classrooms, well‑equipped outdoor playground, and secured perimeter wall.</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="bg-mustard/5 p-6 rounded-2xl border border-mustard/20">
+                    <p className="text-navy/80 text-sm italic">
+                      &quot;We don’t just teach – we inspire. Every day is fresh and inspiring, and our efforts are geared towards keeping our students enthralled, hungry and engaged.&quot;
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-navy">Inspiring Environment</h3>
-              <p className="text-navy/70 text-sm leading-relaxed">
-                A happy and friendly environment that enables learners to develop self‑confidence, self‑esteem and achieve their personal best.
-              </p>
-            </div>
 
-            <div className="bg-mustard/5 p-8 rounded-2xl border border-mustard/20 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-mustard text-navy flex items-center justify-center shadow-md">
-                <Users className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-navy">Dedicated Team</h3>
-              <p className="text-navy/70 text-sm leading-relaxed">
-                A dedicated and talented team of staff, hard‑working learners, and supportive parents working together for excellence.
-              </p>
-            </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="bg-mustard/5 p-8 rounded-2xl border border-mustard/20 space-y-4">
+                  <div className="w-12 h-12 rounded-xl bg-mustard text-navy flex items-center justify-center shadow-md">
+                    <Lightbulb className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-navy">Inspiring Environment</h3>
+                  <p className="text-navy/70 text-sm leading-relaxed">
+                    A happy and friendly environment that enables learners to develop self‑confidence, self‑esteem and achieve their personal best.
+                  </p>
+                </div>
 
-            <div className="bg-mustard/5 p-8 rounded-2xl border border-mustard/20 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-mustard text-navy flex items-center justify-center shadow-md">
-                <CheckCircle className="w-6 h-6" />
+                <div className="bg-mustard/5 p-8 rounded-2xl border border-mustard/20 space-y-4">
+                  <div className="w-12 h-12 rounded-xl bg-mustard text-navy flex items-center justify-center shadow-md">
+                    <Users className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-navy">Dedicated Team</h3>
+                  <p className="text-navy/70 text-sm leading-relaxed">
+                    A dedicated and talented team of staff, hard‑working learners, and supportive parents working together for excellence.
+                  </p>
+                </div>
+
+                <div className="bg-mustard/5 p-8 rounded-2xl border border-mustard/20 space-y-4">
+                  <div className="w-12 h-12 rounded-xl bg-mustard text-navy flex items-center justify-center shadow-md">
+                    <CheckCircle className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-navy">Holistic Development</h3>
+                  <p className="text-navy/70 text-sm leading-relaxed">
+                    We deliver a curriculum enhanced with robust co‑curricular, sport and enrichment programs that stretch students&apos; abilities.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-navy">Holistic Development</h3>
-              <p className="text-navy/70 text-sm leading-relaxed">
-                We deliver a curriculum enhanced with robust co‑curricular, sport and enrichment programs that stretch students&apos; abilities.
-              </p>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
           {/* Facebook Page Card */}
           <div className="mt-12 max-w-md mx-auto bg-navy text-white rounded-2xl p-6 border border-mustard/30 shadow-xl">
@@ -806,7 +969,7 @@ export default function DeansBrookSchoolLanding() {
         </div>
       </section>
 
-      
+
 
       {/* ─── 9. CONTACT ────────────────────────────────────────── */}
       <section id="contact" className="py-20 bg-white">
