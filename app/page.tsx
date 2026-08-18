@@ -52,7 +52,7 @@ const CLASSES = [
         age: "6+ years",
         days: "5 Days",
         time: "7:30am – 4pm",
-        img: './image1.jpeg',
+        img: './festiv1.jpg',
         desc: "A comprehensive primary program that builds strong academic foundations while nurturing creativity, critical thinking, and character development."
     },
     {
