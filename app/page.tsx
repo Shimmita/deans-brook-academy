@@ -50,187 +50,65 @@ const CLASSES = [
     desc: "Preparing students for higher learning with a robust curriculum, critical thinking, and co-curricular excellence."
   }
 ];
+
 const GALLERY_ITEMS = [
-  {
-    id: 1,
-    type: 'campus',
-    title: 'Main Campus',
-    img: './landing.jpg',
-  },
-  {
-    id: 2,
-    type: '',
-    title: '',
-    img: './other_13.jpg',
-  },
+  // Campus
+  { id: 1, type: 'campus', title: 'Main Campus', img: './landing.jpg' },
+  { id: 2, type: 'campus', title: 'Campus Green', img: './other_13.jpg' },
+  { id: 4, type: 'campus', title: 'Campus Walkway', img: './other_11.jpg' },
+  { id: 5, type: 'campus', title: 'Outdoor Area', img: './other_8.jpg' },
+  { id: 6, type: 'campus', title: 'School Grounds', img: './other_7.jpg' },
+  { id: 7, type: 'campus', title: 'Playground', img: './other_6.jpg' },
+  { id: 8, type: 'campus', title: 'Campus View', img: './other_5.jpg' },
+  { id: 9, type: 'campus', title: 'School Building', img: './other_4.jpg' },
+  { id: 17, type: 'campus', title: 'Campus Corner', img: './other_2.jpg' },
+  { id: 18, type: 'campus', title: 'Garden Area', img: './other_3.jpg' },
+  { id: 20, type: 'campus', title: 'Main Entrance', img: './other_1.jpg' },
+  { id: 22, type: 'campus', title: 'Campus Path', img: './other_17.jpg' },
+  { id: 21, type: 'campus', title: 'Sports Field', img: './other_15.jpg' },
+  { id: 28, type: 'campus', title: 'Another Campus View', img: './another.jpg' },
 
-  {
-    id: 3,
-    type: 'events',
-    title: 'Annual Sports Day',
-    img: './sports_1.jpg',
-  },
+  // Classroom
+  { id: 42, type: 'classroom', title: 'Classroom 1', img: './image1.jpeg' },
+  { id: 43, type: 'classroom', title: 'Classroom 2', img: './image2.jpeg' },
+  { id: 44, type: 'classroom', title: 'Classroom 3', img: './image3.jpeg' },
+  { id: 45, type: 'classroom', title: 'Classroom 4', img: './image4.jpeg' },
+  { id: 16, type: 'classroom', title: 'Early Learning Centre', img: './other_9.jpg' },
 
-  {
-    id: 4,
-    type: '',
-    title: '',
-    img: './other_11.jpg',
-  },
-
-
-  {
-    id: 6,
-    type: '',
-    title: '',
-    img: './other_8.jpg',
-  },
-  {
-    id: 7,
-    type: '',
-    title: '',
-    img: './other_7.jpg',
-  },
-  {
-    id: 8,
-    type: '',
-    title: '',
-    img: './other_6.jpg',
-  },
-  {
-    id: 9,
-    type: '',
-    title: '',
-    img: './other_5.jpg',
-  },
-  {
-    id: 10,
-    type: '',
-    title: '',
-    img: './other_4.jpg',
-  },
-  {
-    id: 11,
-    type: 'sports',
-    title: 'Football Training',
-    img: './sports.jpg',
-  },
-  {
-    id: 12,
-    type: 'swimming',
-    title: 'Swimming Lessons',
-    img: './swimming.jpg',
-  },
-  {
-    id: 13,
-    type: 'assembly',
-    title: 'Morning Assembly',
-    img: './assembly.jpg',
-  },
-  {
-    id: 14,
-    type: 'clubs',
-    title: 'Debate Club',
-    img: './debate.jpg',
-  },
-  {
-    id: 15,
-    type: 'excursion',
-    title: 'Educational Trip',
-    img: './trip.jpg',
-  },
-  {
-    id: 16,
-    type: 'kindergarten',
-    title: 'Early Learning Centre',
-    img: './other_9.jpg',
-  },
-  {
-    id: 17,
-    type: '',
-    title: '',
-    img: './other_2.jpg',
-  },
-  {
-    id: 18,
-    type: '',
-    title: '',
-    img: './other_3.jpg',
-  },
-  {
-    id: 19,
-    type: 'awards',
-    title: 'Academic Awards',
-    img: './awards.jpg',
-  },
-  {
-    id: 20,
-    type: '',
-    title: '',
-    img: './other_1.jpg',
-  },
-
-
-  {
-    id: 22,
-    type: '',
-    title: '',
-    img: './other_17.jpg',
-  },
-
-  {
-    id: 24,
-    type: '',
-    title: '',
-    img: './more_2.jpg',
-  },
-  {
-    id: 23,
-    type: '',
-    title: '',
-    img: './more_1.jpg',
-  },
-  {
-    id: 25,
-    type: '',
-    title: '',
-    img: './more_3.jpg',
-  },
-  {
-    id: 21,
-    type: '',
-    title: '',
-    img: './other_15.jpg',
-  },
-  {
-    id: 26,
-    type: '',
-    title: '',
-    img: './more_4.jpg',
-  },
-  {
-    id: 27,
-    type: '',
-    title: '',
-    img: './other_2.jpg',
-  },
-  {
-    id: 28,
-    type: '',
-    title: '',
-    img: './another.jpg',
-  },
-
+  // Events
+  { id: 3, type: 'events', title: 'Annual Sports Day', img: './sports_1.jpg' },
+  { id: 11, type: 'events', title: 'Football Training', img: './sports.jpg' },
+  { id: 12, type: 'events', title: 'Swimming Lessons', img: './swimming.jpg' },
+  { id: 13, type: 'events', title: 'Morning Assembly', img: './assembly.jpg' },
+  { id: 14, type: 'events', title: 'Debate Club', img: './debate.jpg' },
+  { id: 15, type: 'events', title: 'Educational Trip', img: './trip.jpg' },
+  { id: 19, type: 'events', title: 'Academic Awards', img: './awards.jpg' },
+  { id: 23, type: 'events', title: 'Event 1', img: './more_1.jpg' },
+  { id: 24, type: 'events', title: 'Event 2', img: './more_2.jpg' },
+  { id: 25, type: 'events', title: 'Event 3', img: './more_3.jpg' },
+  { id: 26, type: 'events', title: 'Event 4', img: './more_4.jpg' },
+  { id: 29, type: 'events', title: 'Festival 1', img: './festiv1.jpg' },
+  { id: 30, type: 'events', title: 'Festival 2', img: './festiv2.jpg' },
+  { id: 31, type: 'events', title: 'Festival 3', img: './festiv3.jpg' },
+  { id: 32, type: 'events', title: 'Festival 4', img: './festiv4.jpg' },
+  { id: 33, type: 'events', title: 'Festival 5', img: './festiv5.jpg' },
+  { id: 34, type: 'events', title: 'Festival 6', img: './festiv6.jpg' },
+  { id: 35, type: 'events', title: 'Festival 7', img: './festiv7.jpg' },
+  { id: 36, type: 'events', title: 'Festival 8', img: './festiv8.jpg' },
+  { id: 37, type: 'events', title: 'Festival 9', img: './festiv9.jpg' },
+  { id: 38, type: 'events', title: 'Festival 10', img: './festiv10.jpg' },
+  { id: 39, type: 'events', title: 'Festival 11', img: './festiv11.jpg' },
+  { id: 40, type: 'events', title: 'Festival 12', img: './festiv12.jpg' },
+  { id: 41, type: 'events', title: 'Festival 13', img: './festiv13.jpg' },
 ];
-
 
 const TEAM_LEADERS = [
   {
-    name: "Dr. Evans Ochieng",
-    role: "Founder & Executive Director",
-    bio: "Robotics pioneer with 12+ years in STEM education. Former MIT Media Lab guest researcher and advocate for tech literacy in Africa.",
-    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600",
-    specialty: "AI & Strategic Vision",
+    name: "Toney Ongugo",
+    role: "School Principal",
+    bio: "Education leader with extensive experience in school leadership and learner development. Passionate about academic excellence, holistic education, and nurturing every learner’s potential through innovative and supportive learning environments.",
+    img: "./principal.png",
+    specialty: "BEd. Arts / MBA",
     facebook: "https://facebook.com",
     linkedin: "https://linkedin.com"
   },
@@ -304,30 +182,11 @@ const FAQS = [
 ];
 
 const SOCIAL_LINKS = [
-  { name: 'Facebook', icon: FaFacebook, url: '#', color: '#1877f2' },
-  { name: 'Twitter', icon: FaTwitter, url: '#', color: '#000000' },
+  { name: 'Facebook', icon: FaFacebook, url: 'https://web.facebook.com/Deansbrookschool?sfnsn=wa&mibextid=RUbZ1f&_rdc=1&_rdr', color: '#1877f2' },
+  { name: 'Twitter', icon: FaTwitter, url: 'https://x.com/Deansbrook83254?t=aMY2a51Pg_v5_rqy7czhOQ&s=08', color: '#000000' },
   { name: 'Instagram', icon: FaInstagram, url: '#', color: '#e4405f' },
   { name: 'LinkedIn', icon: FaLinkedin, url: '#', color: '#0a66c2' },
   { name: 'YouTube', icon: FaYoutube, url: '#', color: '#ff0000' },
-];
-
-const TESTIMONIALS = [
-  {
-    id: 1,
-    name: "Mary Akinyi",
-    child: "Parent of Ethan (Grade 3)",
-    text: "Deansbrook has been a wonderful place for my son. The teachers are caring and the learning environment is top-notch. He has grown academically and socially.",
-    rating: 5,
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200"
-  },
-  {
-    id: 2,
-    name: "David Mwangi",
-    child: "Parent of Aisha (Grade 5)",
-    text: "The school's commitment to holistic education is impressive. My daughter loves the sports and arts programs as much as her classes. I highly recommend Deansbrook.",
-    rating: 5,
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200"
-  }
 ];
 
 // ─── MAIN COMPONENT ────────────────────────────────────────────────────
@@ -336,8 +195,9 @@ export default function DeansBrookSchoolLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [galleryFilter, setGalleryFilter] = useState('all');
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [enrolModalOpen, setEnrolModalOpen] = useState(false);
+  const [enrolFormSubmitted, setEnrolFormSubmitted] = useState(false);
 
   const filteredGallery = galleryFilter === 'all'
     ? GALLERY_ITEMS
@@ -349,10 +209,26 @@ export default function DeansBrookSchoolLanding() {
     setTimeout(() => setFormSubmitted(false), 5000);
   };
 
-  const handleFeedbackSubmit = (e: React.FormEvent) => {
+  const handleEnrolSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setFeedbackSubmitted(true);
-    setTimeout(() => setFeedbackSubmitted(false), 5000);
+    // Construct mailto link with form data
+    const form = e.target as HTMLFormElement;
+    const parentName = (form.querySelector('#enrol-parent-name') as HTMLInputElement)?.value || '';
+    const childAge = (form.querySelector('#enrol-child-age') as HTMLInputElement)?.value || '';
+    const email = (form.querySelector('#enrol-email') as HTMLInputElement)?.value || '';
+    const phone = (form.querySelector('#enrol-phone') as HTMLInputElement)?.value || '';
+    const campus = (form.querySelector('#enrol-campus') as HTMLSelectElement)?.value || '';
+    const message = (form.querySelector('#enrol-message') as HTMLTextAreaElement)?.value || '';
+
+    const subject = 'New Enrolment Inquiry';
+    const body = `Parent Name: ${parentName}\nChild's Age/Grade: ${childAge}\nEmail: ${email}\nPhone: ${phone}\nCampus Preference: ${campus}\nAdditional Message: ${message}`;
+    window.location.href = `mailto:schooldeans@go.ke?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    setEnrolFormSubmitted(true);
+    setTimeout(() => {
+      setEnrolFormSubmitted(false);
+      setEnrolModalOpen(false);
+    }, 5000);
   };
 
   const toggleFaq = (index: number) => {
@@ -508,9 +384,131 @@ export default function DeansBrookSchoolLanding() {
 
       </section>
 
+      {/* ─── 3. ABOUT US ──────────────────────────────────────── */}
+      <section id="about" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <h2 className="text-xs uppercase font-extrabold text-mustard tracking-widest">Welcome To Deansbrook Schools</h2>
+            <p className="text-3xl sm:text-4xl font-black text-navy tracking-tight">
+              About Us
+            </p>
+            <div className="w-16 h-1 bg-mustard mx-auto rounded-full" />
+          </div>
 
-      {/* ─── 3. ADMISSION CLASSES ────────────────────────────── */}
-      <section id="classes" className="py-20 bg-navy/5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-extrabold text-navy">Our Vision</h3>
+                <p className="text-navy/70 text-base leading-relaxed mt-2">
+                  To be the preferred school of choice empowering students with knowledge, skills and values that enable them achieve their full potential and become responsible global citizens.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-extrabold text-navy">Our Mission</h3>
+                <p className="text-navy/70 text-base leading-relaxed mt-2">
+                  We provide students with a broad range of learning experiences that enable them to develop their full potential in a caring environment where everyone is valued and respected.
+                </p>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-extrabold text-navy">Our Campuses</h3>
+                <ul className="space-y-3 text-navy/70 text-base">
+                  <li className="flex items-start space-x-3">
+                    <span className="text-mustard font-bold">•</span>
+                    <span><strong>Bamburi Campus</strong> – opposite Bamburi Cement Factory. Kindergarten school offering CBC system with qualified teachers.</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <span className="text-mustard font-bold">•</span>
+                    <span><strong>Kiembeni Campus</strong> – past the Police Post. Spacious classrooms, well‑equipped outdoor playground, and secured perimeter wall.</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-mustard/5 p-6 rounded-2xl border border-mustard/20">
+                <p className="text-navy/80 text-sm italic">
+                  &quot;We don’t just teach – we inspire. Every day is fresh and inspiring, and our efforts are geared towards keeping our students enthralled, hungry and engaged.&quot;
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-mustard/5 p-8 rounded-2xl border border-mustard/20 space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-mustard text-navy flex items-center justify-center shadow-md">
+                <Lightbulb className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-navy">Inspiring Environment</h3>
+              <p className="text-navy/70 text-sm leading-relaxed">
+                A happy and friendly environment that enables learners to develop self‑confidence, self‑esteem and achieve their personal best.
+              </p>
+            </div>
+
+            <div className="bg-mustard/5 p-8 rounded-2xl border border-mustard/20 space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-mustard text-navy flex items-center justify-center shadow-md">
+                <Users className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-navy">Dedicated Team</h3>
+              <p className="text-navy/70 text-sm leading-relaxed">
+                A dedicated and talented team of staff, hard‑working learners, and supportive parents working together for excellence.
+              </p>
+            </div>
+
+            <div className="bg-mustard/5 p-8 rounded-2xl border border-mustard/20 space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-mustard text-navy flex items-center justify-center shadow-md">
+                <CheckCircle className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-navy">Holistic Development</h3>
+              <p className="text-navy/70 text-sm leading-relaxed">
+                We deliver a curriculum enhanced with robust co‑curricular, sport and enrichment programs that stretch students&apos; abilities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 4. PRINCIPAL'S MESSAGE ──────────────────────────── */}
+      <section id="principal" className="py-20 bg-navy/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <h2 className="text-xs uppercase font-extrabold text-mustard tracking-widest">Message from the Principal</h2>
+            <p className="text-3xl sm:text-4xl font-black text-navy tracking-tight">
+              A Word from Our Principal
+            </p>
+            <div className="w-16 h-1 bg-mustard mx-auto rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            <div className="lg:col-span-1 flex justify-center">
+              <div className="relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl border-4 border-mustard/30">
+                <img
+                  src="./principal.png"
+                  alt="Principal Toney Ongugo"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="lg:col-span-2 space-y-6">
+              <blockquote className="text-lg md:text-xl text-navy/80 leading-relaxed italic">
+                “The academic landscape in Kenya continues to evolve, with changes in curriculum, learners’ needs, and parental involvement. Schools therefore play a vital role in providing the infrastructure, qualified faculty, facilities, and resources needed to achieve national education goals.
+              </blockquote>
+              <blockquote className="text-lg md:text-xl text-navy/80 leading-relaxed italic">
+                Deansbrook Group of Schools offers a serene learning environment with 21st-century facilities designed to support the holistic development of every learner. Our approach aligns with the CBE mission of “Nurturing every learner’s potential”, preparing students with the knowledge, skills, and values needed to thrive in the global market.
+              </blockquote>
+              <blockquote className="text-lg md:text-xl text-navy/80 leading-relaxed italic">
+                I warmly welcome you to Deansbrook Group of Schools, located in Mombasa County, Kenya.”
+              </blockquote>
+              <div className="pt-4 border-t border-mustard/20">
+                <p className="font-extrabold text-navy text-xl">Toney Ongugo</p>
+                <p className="text-mustard font-bold">School Principal</p>
+                <p className="text-navy/60 text-sm">Deansbrook Group of Schools • BEd. Arts / MBA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 5. ADMISSION CLASSES ────────────────────────────── */}
+      <section id="classes" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
             <h2 className="text-xs uppercase font-extrabold text-mustard tracking-widest">Our Programs</h2>
@@ -542,7 +540,13 @@ export default function DeansBrookSchoolLanding() {
                 </div>
                 <div className="pt-6 border-t border-navy/10 mt-6 flex items-center justify-between text-sm font-bold text-navy">
                   <span>Learn more</span>
-                  <ArrowRight className="w-4 h-4 text-mustard group-hover:translate-x-1 transition-transform" />
+                  <button
+                    onClick={() => setEnrolModalOpen(true)}
+                    className="flex items-center gap-1 text-mustard hover:text-mustard/80 transition"
+                  >
+                    Enrol Now
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
                 </div>
               </div>
             ))}
@@ -550,8 +554,7 @@ export default function DeansBrookSchoolLanding() {
         </div>
       </section>
 
-
-      {/* 4. TEAM LEADERS SECTION */}
+      {/* ─── 6. TEAM LEADERS SECTION ──────────────────────────── */}
       <section id="team" className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -622,11 +625,7 @@ export default function DeansBrookSchoolLanding() {
         </div>
       </section>
 
-
-
-
-
-      {/* ─── 5. OUR EVENTS ────────────────────────────────────── */}
+      {/* ─── 7. OUR EVENTS ────────────────────────────────────── */}
       <section id="events" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -657,7 +656,7 @@ export default function DeansBrookSchoolLanding() {
         </div>
       </section>
 
-      {/* ─── 6. NEWS & GALLERY ────────────────────────────────── */}
+      {/* ─── 8. NEWS & GALLERY ────────────────────────────────── */}
       <section id="gallery" className="py-20 bg-navy/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
@@ -673,8 +672,8 @@ export default function DeansBrookSchoolLanding() {
                 key={tab}
                 onClick={() => setGalleryFilter(tab)}
                 className={`px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${galleryFilter === tab
-                  ? 'bg-mustard text-navy shadow-lg shadow-mustard/30'
-                  : 'bg-white text-navy/60 hover:bg-navy/10'
+                    ? 'bg-mustard text-navy shadow-lg shadow-mustard/30'
+                    : 'bg-white text-navy/60 hover:bg-navy/10'
                   }`}
               >
                 {tab}
@@ -705,7 +704,7 @@ export default function DeansBrookSchoolLanding() {
         </div>
       </section>
 
-      {/* ─── 7. SOCIAL MEDIA LINKS ────────────────────────────── */}
+      {/* ─── 9. SOCIAL MEDIA LINKS ────────────────────────────── */}
       <section id="social" className="py-16 bg-white border-y border-navy/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto space-y-4 mb-10">
@@ -740,246 +739,50 @@ export default function DeansBrookSchoolLanding() {
               );
             })}
           </div>
-
-          {/* ─── 4. ABOUT US ──────────────────────────────────────── */}
-          <section id="about" className="py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <h2 className="text-xs uppercase font-extrabold text-mustard tracking-widest">Welcome To Deansbrook Schools</h2>
-                <p className="text-3xl sm:text-4xl font-black text-navy tracking-tight">
-                  About Us
-                </p>
-                <div className="w-16 h-1 bg-mustard mx-auto rounded-full" />
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-2xl font-extrabold text-navy">Our Vision</h3>
-                    <p className="text-navy/70 text-base leading-relaxed mt-2">
-                      To be the preferred school of choice empowering students with knowledge, skills and values that enable them achieve their full potential and become responsible global citizens.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-extrabold text-navy">Our Mission</h3>
-                    <p className="text-navy/70 text-base leading-relaxed mt-2">
-                      We provide students with a broad range of learning experiences that enable them to develop their full potential in a caring environment where everyone is valued and respected.
-                    </p>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-2xl font-extrabold text-navy">Our Campuses</h3>
-                    <ul className="space-y-3 text-navy/70 text-base">
-                      <li className="flex items-start space-x-3">
-                        <span className="text-mustard font-bold">•</span>
-                        <span><strong>Bamburi Campus</strong> – opposite Bamburi Cement Factory. Kindergarten school offering CBC system with qualified teachers.</span>
-                      </li>
-                      <li className="flex items-start space-x-3">
-                        <span className="text-mustard font-bold">•</span>
-                        <span><strong>Kiembeni Campus</strong> – past the Police Post. Spacious classrooms, well‑equipped outdoor playground, and secured perimeter wall.</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="bg-mustard/5 p-6 rounded-2xl border border-mustard/20">
-                    <p className="text-navy/80 text-sm italic">
-                      &quot;We don’t just teach – we inspire. Every day is fresh and inspiring, and our efforts are geared towards keeping our students enthralled, hungry and engaged.&quot;
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-mustard/5 p-8 rounded-2xl border border-mustard/20 space-y-4">
-                  <div className="w-12 h-12 rounded-xl bg-mustard text-navy flex items-center justify-center shadow-md">
-                    <Lightbulb className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-navy">Inspiring Environment</h3>
-                  <p className="text-navy/70 text-sm leading-relaxed">
-                    A happy and friendly environment that enables learners to develop self‑confidence, self‑esteem and achieve their personal best.
-                  </p>
-                </div>
-
-                <div className="bg-mustard/5 p-8 rounded-2xl border border-mustard/20 space-y-4">
-                  <div className="w-12 h-12 rounded-xl bg-mustard text-navy flex items-center justify-center shadow-md">
-                    <Users className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-navy">Dedicated Team</h3>
-                  <p className="text-navy/70 text-sm leading-relaxed">
-                    A dedicated and talented team of staff, hard‑working learners, and supportive parents working together for excellence.
-                  </p>
-                </div>
-
-                <div className="bg-mustard/5 p-8 rounded-2xl border border-mustard/20 space-y-4">
-                  <div className="w-12 h-12 rounded-xl bg-mustard text-navy flex items-center justify-center shadow-md">
-                    <CheckCircle className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-navy">Holistic Development</h3>
-                  <p className="text-navy/70 text-sm leading-relaxed">
-                    We deliver a curriculum enhanced with robust co‑curricular, sport and enrichment programs that stretch students&apos; abilities.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Facebook Page Card */}
-          <div className="mt-12 max-w-md mx-auto bg-navy text-white rounded-2xl p-6 border border-mustard/30 shadow-xl">
-            <div className="flex items-start space-x-4">
-              <div className="bg-white/10 p-3 rounded-xl">
-                <FaFacebook className="w-8 h-8 text-mustard" />
-              </div>
-              <div className="flex-1">
-                <h4 className="font-extrabold text-lg">Deansbrook Schools</h4>
-                <p className="text-white/70 text-sm">Join our Facebook community</p>
-                <a
-                  href="#"
-                  className="inline-block mt-3 bg-mustard text-navy font-extrabold text-sm px-5 py-2 rounded-xl hover:bg-mustard/90 transition"
-                >
-                  Follow Us
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* ─── 8. FEEDBACK / HELP ────────────────────────────────── */}
-      <section id="feedback" className="py-20 bg-navy/5">
+      {/* ─── 10. FAQ / HELP ────────────────────────────────────── */}
+      <section id="faq" className="py-20 bg-navy/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-
-            {/* Left: Testimonials */}
-            <div className="lg:col-span-5 space-y-6">
-              <div>
-                <h2 className="text-xs uppercase font-extrabold text-mustard tracking-widest">What Parents Say</h2>
-                <p className="text-3xl font-black text-navy tracking-tight mt-2">
-                  Real Feedback from Real Families
-                </p>
-                <div className="w-16 h-1 bg-mustard rounded-full mt-4" />
-              </div>
-
-              {TESTIMONIALS.map((t) => (
-                <div key={t.id} className="bg-white p-6 rounded-2xl border border-navy/10 shadow-sm">
-                  <div className="flex items-start space-x-4">
-                    <img
-                      src={t.img}
-                      alt={t.name}
-                      className="w-12 h-12 rounded-full object-cover border-2 border-mustard/30"
-                    />
-                    <div>
-                      <div className="flex items-center space-x-1 text-mustard">
-                        {[...Array(t.rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-mustard" />
-                        ))}
-                      </div>
-                      <p className="font-bold text-navy">{t.name}</p>
-                      <p className="text-xs text-navy/50">{t.child}</p>
-                    </div>
-                  </div>
-                  <div className="mt-3 relative">
-                    <Quote className="w-6 h-6 text-mustard/30 absolute -top-1 -left-1" />
-                    <p className="text-navy/70 text-sm pl-6 leading-relaxed">{t.text}</p>
-                  </div>
-                </div>
-              ))}
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="text-xs uppercase font-extrabold text-mustard tracking-widest">Help & Support</h2>
+              <p className="text-3xl sm:text-4xl font-black text-navy tracking-tight">
+                Frequently Asked Questions
+              </p>
+              <div className="w-16 h-1 bg-mustard mx-auto rounded-full" />
             </div>
 
-            {/* Right: Feedback Form + FAQ */}
-            <div className="lg:col-span-7 space-y-8">
-
-              {/* Feedback Form */}
-              <div className="bg-white p-8 rounded-2xl border border-navy/10 shadow-sm">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="bg-mustard/10 p-2 rounded-xl">
-                    <MessageCircle className="w-5 h-5 text-mustard" />
-                  </div>
-                  <h3 className="text-xl font-extrabold text-navy">Share Your Feedback</h3>
-                </div>
-
-                <form onSubmit={handleFeedbackSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      required
-                      className="px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm"
-                    />
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      required
-                      className="px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm"
-                    />
-                  </div>
-                  <select className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard bg-white transition text-sm">
-                    <option>Feedback Type</option>
-                    <option>General Feedback</option>
-                    <option>Help / Support</option>
-                    <option>Suggestion</option>
-                    <option>Compliment</option>
-                  </select>
-                  <textarea
-                    rows={4}
-                    placeholder="Tell us about your experience or ask for help…"
-                    required
-                    className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm resize-none"
-                  />
-                  <button
-                    type="submit"
-                    className="w-full bg-mustard hover:bg-mustard/90 text-navy font-extrabold py-3 rounded-xl transition shadow-lg shadow-mustard/20"
-                  >
-                    Send Feedback
-                  </button>
-                  {feedbackSubmitted && (
-                    <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 text-sm font-semibold text-center animate-fade-in">
-                      ✓ Thank you! Your feedback helps us improve.
-                    </div>
-                  )}
-                </form>
-              </div>
-
-              {/* FAQ / Help */}
-              <div className="bg-white p-8 rounded-2xl border border-navy/10 shadow-sm">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="bg-mustard/10 p-2 rounded-xl">
-                    <HelpCircle className="w-5 h-5 text-mustard" />
-                  </div>
-                  <h3 className="text-xl font-extrabold text-navy">Frequently Asked Questions</h3>
-                </div>
-
-                <div className="space-y-3">
-                  {FAQS.map((faq, index) => (
-                    <div key={index} className="border border-navy/10 rounded-xl overflow-hidden">
-                      <button
-                        onClick={() => toggleFaq(index)}
-                        className="w-full flex items-center justify-between p-4 text-left hover:bg-navy/5 transition"
-                      >
-                        <span className="font-bold text-navy text-sm">{faq.q}</span>
-                        {openFaq === index ? (
-                          <ChevronUp className="w-5 h-5 text-mustard flex-shrink-0" />
-                        ) : (
-                          <ChevronDown className="w-5 h-5 text-navy/40 flex-shrink-0" />
-                        )}
-                      </button>
-                      {openFaq === index && (
-                        <div className="px-4 pb-4 text-navy/70 text-sm leading-relaxed border-t border-navy/10 pt-3">
-                          {faq.a}
-                        </div>
+            <div className="bg-white p-8 rounded-2xl border border-navy/10 shadow-sm">
+              <div className="space-y-3">
+                {FAQS.map((faq, index) => (
+                  <div key={index} className="border border-navy/10 rounded-xl overflow-hidden">
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-full flex items-center justify-between p-4 text-left hover:bg-navy/5 transition"
+                    >
+                      <span className="font-bold text-navy text-sm">{faq.q}</span>
+                      {openFaq === index ? (
+                        <ChevronUp className="w-5 h-5 text-mustard flex-shrink-0" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-navy/40 flex-shrink-0" />
                       )}
-                    </div>
-                  ))}
-                </div>
+                    </button>
+                    {openFaq === index && (
+                      <div className="px-4 pb-4 text-navy/70 text-sm leading-relaxed border-t border-navy/10 pt-3">
+                        {faq.a}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
-
             </div>
           </div>
         </div>
       </section>
 
-
-
-      {/* ─── 9. CONTACT ────────────────────────────────────────── */}
+      {/* ─── 11. CONTACT ────────────────────────────────────────── */}
       <section id="contact" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-navy rounded-[2.5rem] border border-mustard/30 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
@@ -1110,7 +913,113 @@ export default function DeansBrookSchoolLanding() {
         </div>
       </section>
 
-      {/* ─── 10. FOOTER ────────────────────────────────────────── */}
+      {/* ─── 12. ENROLMENT MODAL ──────────────────────────────── */}
+      {enrolModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 relative">
+            <button
+              onClick={() => {
+                setEnrolModalOpen(false);
+                setEnrolFormSubmitted(false);
+              }}
+              className="absolute top-4 right-4 text-navy/40 hover:text-navy transition"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-black text-navy">Enrolment Form</h3>
+                <p className="text-navy/60 text-sm">Fill in your details to begin the enrolment process.</p>
+              </div>
+
+              <form onSubmit={handleEnrolSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-navy uppercase tracking-wider">Parent Full Name</label>
+                    <input
+                      id="enrol-parent-name"
+                      type="text"
+                      required
+                      placeholder="e.g. Mwangi Onyango"
+                      className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-navy uppercase tracking-wider">Child's Age / Grade</label>
+                    <input
+                      id="enrol-child-age"
+                      type="text"
+                      required
+                      placeholder="e.g. 7 years, Grade 2"
+                      className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-navy uppercase tracking-wider">Email Address</label>
+                    <input
+                      id="enrol-email"
+                      type="email"
+                      required
+                      placeholder="name@domain.com"
+                      className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-navy uppercase tracking-wider">Phone Number</label>
+                    <input
+                      id="enrol-phone"
+                      type="tel"
+                      required
+                      placeholder="0712345678"
+                      className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-navy uppercase tracking-wider">Campus Preference</label>
+                  <select
+                    id="enrol-campus"
+                    className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard bg-white transition text-sm"
+                  >
+                    <option>Bamburi Campus</option>
+                    <option>Kiembeni Campus</option>
+                    <option>Either</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-navy uppercase tracking-wider">Additional Message</label>
+                  <textarea
+                    id="enrol-message"
+                    rows={3}
+                    placeholder="Any specific needs or questions..."
+                    className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm resize-none"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-mustard hover:bg-mustard/90 text-navy font-extrabold py-4 rounded-xl transition shadow-lg shadow-mustard/30"
+                >
+                  Enrol Now
+                </button>
+
+                {enrolFormSubmitted && (
+                  <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 text-sm font-semibold text-center animate-fade-in">
+                    ✓ Enrolment request sent! We'll get back to you shortly.
+                  </div>
+                )}
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ─── 13. FOOTER ────────────────────────────────────────── */}
       <footer className="bg-navy border-t border-mustard/20 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
@@ -1127,7 +1036,7 @@ export default function DeansBrookSchoolLanding() {
               <a href="#classes" className="hover:text-mustard transition-colors">Classes</a>
               <a href="#events" className="hover:text-mustard transition-colors">Events</a>
               <a href="#gallery" className="hover:text-mustard transition-colors">Gallery</a>
-              <a href="#feedback" className="hover:text-mustard transition-colors">Feedback</a>
+              <a href="#faq" className="hover:text-mustard transition-colors">FAQ</a>
               <a href="#contact" className="hover:text-mustard transition-colors">Contact</a>
             </div>
 
