@@ -5,36 +5,25 @@ import {
     Award,
     BookOpen,
     Calendar,
+    CalendarDays,
     CheckCircle,
     ChevronDown,
     ChevronUp,
+    Clock,
+    Drama,
     GraduationCap,
-    HelpCircle,
     Lightbulb,
     Mail,
     MapPin,
     Menu,
-    MessageCircle,
-    Phone,
-    Quote,
-    Rocket,
-    School,
-    Star,
-    Users,
-    X,
-    Clock,
-    CalendarDays,
-    User,
-    UsersRound,
-    Mail as MailIcon,
-    Phone as PhoneIcon,
     Monitor,
     Music,
-    Drama,
-    Briefcase,
-    Shield,
-    Bus,
-    Home
+    Phone,
+    Rocket,
+    School,
+    User,
+    Users,
+    X
 } from 'lucide-react';
 import React, { useState } from 'react';
 
@@ -143,20 +132,24 @@ const GALLERY_ITEMS = [
 
 const TEAM_LEADERS = [
     {
-        name: "Toney Ongugo",
+        name: "Mr. Toney Ongugo",
         role: "School Principal",
-        bio: "Education leader with extensive experience in school leadership and learner development. Passionate about academic excellence, holistic education, and nurturing every learner's potential through innovative and supportive learning environments.",
+        bio: `The academic landscape in Kenya continues to evolve, with changes in curriculum, learners' needs, and parental involvement. Schools therefore play a vital role in providing the infrastructure, qualified faculty, facilities, and resources needed to achieve national education goals. Deansbrook Group of Schools offers a serene learning environment with 21st-century facilities designed to support the holistic development of every learner. Our approach aligns with the CBE mission of “Nurturing every learner's potential”, preparing students with the knowledge, skills, and values needed to thrive in the global market.`,
         img: "./principal.png",
         specialty: "BEd. Arts / MBA",
         facebook: "https://facebook.com",
         linkedin: "https://linkedin.com"
     },
     {
-        name: "Amina Hassan",
-        role: "Head of Robotics Curriculum",
-        bio: "Mechatronics engineer specializing in youth STEM methodology. Led Kenyan youth teams to international robotics olympiads.",
-        img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600",
-        specialty: "LEGO Mindstorms & IoT",
+        name: "Mrs. Sally Tanui",
+        role: "School Principal",
+        bio: `The first six years of a child’s life are crucial for brain development. What children see, hear, learn, and experience during these early years shapes their confidence, abilities, and approach to learning for years to come. Investing in the preschool years is investing in a child’s future.
+
+At Deansbrook School, learning goes beyond ABCs. We nurture happy, confident, and curious learners in a safe, caring, and stimulating environment where every child feels valued, heard, and encouraged to explore their talents.
+
+At Deansbrook School, we don’t just educate children—we build strong foundations for lifelong success.`,
+        img: "./principal2.jpeg",
+        specialty: "School Principal",
         facebook: "https://facebook.com",
         linkedin: "https://linkedin.com"
     },
@@ -507,76 +500,105 @@ export default function DeansBrookSchoolLanding() {
                 </div>
             </section>
 
-            {/* ─── 4. PRINCIPAL'S MESSAGE ──────────────────────────── */}
-            <section id="principal" className="py-20 bg-navy/5">
+
+            {/* ─── 4. DIRECTORS' MESSAGE ──────────────────────────── */}
+            <section id="directors" className="py-20 bg-navy/5">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                        <h2 className="text-xs uppercase font-extrabold text-mustard tracking-widest">Message from the Principal</h2>
+                        <h2 className="text-xs uppercase font-extrabold text-mustard tracking-widest">Message from the Directors</h2>
                         <p className="text-3xl sm:text-4xl font-black text-navy tracking-tight">
-                            A Word from Our Principal
+                            FROM THE DIRECTORS’ DESK
                         </p>
                         <div className="w-16 h-1 bg-mustard mx-auto rounded-full" />
                     </div>
 
                     <div className="bg-white rounded-3xl shadow-xl border border-navy/10 overflow-hidden">
-                        <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
-                            {/* Image Column - Left side on desktop */}
-                            <div className="lg:col-span-1 relative min-h-[280px] lg:min-h-[400px] bg-navy/5">
-                                <img
-                                    src="./principal.png"
-                                    alt="Principal Toney Ongugo"
-                                    className="w-full h-full object-cover object-top"
-                                />
-                                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/80 to-transparent p-4 lg:hidden">
-                                    <p className="text-white font-bold text-lg">Toney Ongugo</p>
-                                    <p className="text-mustard text-sm font-semibold">School Principal</p>
+                        <div className="p-8 sm:p-12 space-y-8">
+                            <div>
+                                <p className="text-2xl font-black text-navy">Paul & Caroline</p>
+                                <p className="text-mustard font-bold text-sm">Directors, Deansbrook Schools</p>
+                            </div>
+
+                            <p className="text-lg font-semibold text-navy">
+                                It is our pleasure to welcome you to Deansbrook Schools.
+                            </p>
+
+                            {/* Mission Section */}
+                            <div className="space-y-2 border-l-4 border-mustard pl-4">
+                                <h3 className="text-xl font-extrabold text-navy">Our Mission</h3>
+                                <p className="text-base sm:text-lg text-navy/80 leading-relaxed">
+                                    To provide diverse learning experiences that empower every student to reach their full potential and become responsible global citizens.
+                                </p>
+                            </div>
+
+                            {/* Vision Section */}
+                            <div className="space-y-3">
+                                <h3 className="text-xl font-extrabold text-navy">Our Vision</h3>
+                                <p className="text-base text-navy/80">To be a leading school of choice through:</p>
+                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                                    {[
+                                        'Academic excellence',
+                                        'Holistic student development',
+                                        'Exceptional teaching and leadership',
+                                        'A safe, supportive learning environment',
+                                        'Strong parent and community engagement',
+                                        'Modern learning resources and infrastructure',
+                                        'Strong values, good governance and continuous innovation'
+                                    ].map((point, index) => (
+                                        <li key={index} className="flex items-start gap-2.5 text-navy/80 text-sm sm:text-base">
+                                            <span className="text-mustard font-bold mt-0.5">•</span>
+                                            <span>{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Core Values Section */}
+                            <div className="space-y-3">
+                                <h3 className="text-xl font-extrabold text-navy">Our Core Values</h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {['Professionalism', 'Integrity', 'Teamwork', 'Trust', 'Excellence', 'Respect'].map((value, index) => (
+                                        <span
+                                            key={index}
+                                            className="px-3 py-1 bg-navy/5 text-navy font-semibold text-xs rounded-lg border border-navy/10"
+                                        >
+                                            {value}
+                                        </span>
+                                    ))}
                                 </div>
                             </div>
 
-                            {/* Content Column - Right side on desktop */}
-                            <div className="lg:col-span-4 p-8 sm:p-12 space-y-6">
-                                <div className="hidden lg:block">
-                                    <p className="text-2xl font-black text-navy">Toney Ongugo</p>
-                                    <p className="text-mustard font-bold text-sm">School Principal • BEd. Arts / MBA</p>
-                                </div>
+                            {/* Closing Messages */}
+                            <div className="space-y-4 pt-2 border-t border-navy/10 text-navy/80 text-base sm:text-lg leading-relaxed">
+                                <blockquote className="border-l-4 border-mustard/40 pl-4">
+                                    &ldquo;At Deansbrook Schools, we are committed to living these values in all our interactions. We celebrate academic achievement while nurturing creativity, character, leadership and personal growth.&rdquo;
+                                </blockquote>
+                                <blockquote className="border-l-4 border-mustard/20 pl-4">
+                                    &ldquo;As we look to the future, we remain committed to continuous improvement, innovation and excellence. Together with our students, parents and community, we look forward to building a strong foundation for lifelong success.&rdquo;
+                                </blockquote>
+                            </div>
 
-                                <div className="space-y-4">
-                                    <blockquote className="text-base sm:text-lg text-navy/80 leading-relaxed italic border-l-4 border-mustard pl-4">
-                                        &ldquo;The academic landscape in Kenya continues to evolve, with changes in curriculum, learners' needs, and parental involvement. Schools therefore play a vital role in providing the infrastructure, qualified faculty, facilities, and resources needed to achieve national education goals.&rdquo;
-                                    </blockquote>
-                                    <blockquote className="text-base sm:text-lg text-navy/80 leading-relaxed italic border-l-4 border-mustard/40 pl-4">
-                                        &ldquo;Deansbrook Group of Schools offers a serene learning environment with 21st-century facilities designed to support the holistic development of every learner. Our approach aligns with the CBE mission of &ldquo;Nurturing every learner's potential&rdquo;, preparing students with the knowledge, skills, and values needed to thrive in the global market.&rdquo;
-                                    </blockquote>
-                                    <blockquote className="text-base sm:text-lg text-navy/80 leading-relaxed italic border-l-4 border-mustard/20 pl-4">
-                                        &ldquo;I warmly welcome you to Deansbrook Group of Schools, located in Mombasa County, Kenya.&rdquo;
-                                    </blockquote>
-                                </div>
-
-                                <div className="pt-4 border-t border-navy/10 flex flex-wrap items-center gap-4">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-10 h-10 rounded-full bg-mustard/10 flex items-center justify-center">
-                                            <Award className="w-5 h-5 text-mustard" />
-                                        </div>
-                                        <span className="text-xs text-navy/60 font-medium">BEd. Arts / MBA</span>
+                            {/* Action Footer */}
+                            <div className="pt-4 border-t border-navy/10 flex flex-wrap items-center justify-between gap-4">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-10 h-10 rounded-full bg-mustard/10 flex items-center justify-center">
+                                        <School className="w-5 h-5 text-mustard" />
                                     </div>
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-10 h-10 rounded-full bg-mustard/10 flex items-center justify-center">
-                                            <School className="w-5 h-5 text-mustard" />
-                                        </div>
-                                        <span className="text-xs text-navy/60 font-medium">Deansbrook Group of Schools</span>
-                                    </div>
-                                    <button
-                                        onClick={() => openEnrolModal()}
-                                        className="ml-auto bg-mustard hover:bg-mustard/90 text-navy font-bold px-6 py-2 rounded-xl transition shadow-lg shadow-mustard/20 text-sm"
-                                    >
-                                        Enrol Now
-                                    </button>
+                                    <span className="text-xs text-navy/60 font-medium">Deansbrook Schools • With warm regards, Paul & Caroline</span>
                                 </div>
+                                <button
+                                    onClick={() => openEnrolModal()}
+                                    className="ml-auto bg-mustard hover:bg-mustard/90 text-navy font-bold px-6 py-2 rounded-xl transition shadow-lg shadow-mustard/20 text-sm"
+                                >
+                                    Enrol Now
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+
 
             {/* ─── 5. ADMISSION CLASSES ────────────────────────────── */}
             <section id="classes" className="py-20 bg-white">
@@ -773,8 +795,8 @@ export default function DeansBrookSchoolLanding() {
                                 key={tab}
                                 onClick={() => setGalleryFilter(tab)}
                                 className={`px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${galleryFilter === tab
-                                        ? 'bg-mustard text-navy shadow-lg shadow-mustard/30'
-                                        : 'bg-white text-navy/60 hover:bg-navy/10'
+                                    ? 'bg-mustard text-navy shadow-lg shadow-mustard/30'
+                                    : 'bg-white text-navy/60 hover:bg-navy/10'
                                     }`}
                             >
                                 {tab}
