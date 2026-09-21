@@ -153,24 +153,7 @@ At Deansbrook School, we don’t just educate children—we build strong foundat
         facebook: "https://facebook.com",
         linkedin: "https://linkedin.com"
     },
-    {
-        name: "Kevin Kamau",
-        role: "Lead Software & Game Dev Instructor",
-        bio: "Full-stack engineer passionate about gamified learning. Inspires young coders to build full-scale games and web applications.",
-        img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600",
-        specialty: "Python, JS & Unity",
-        facebook: "https://facebook.com",
-        linkedin: "https://linkedin.com"
-    },
-    {
-        name: "Grace Wanjiru",
-        role: "Student Success & Mentorship Lead",
-        bio: "Educational psychologist committed to building supportive, inclusive tech learning environments for boys and girls.",
-        img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600",
-        specialty: "Student Well-being & Mentorship",
-        facebook: "https://facebook.com",
-        linkedin: "https://linkedin.com"
-    }
+    
 ];
 
 const EVENTS = [
@@ -678,75 +661,106 @@ export default function DeansBrookSchoolLanding() {
             </section>
 
             {/* ─── 6. TEAM LEADERS SECTION ──────────────────────────── */}
-            <section id="team" className="py-20 bg-slate-900 text-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                        <h2 className="text-xs uppercase font-black text-amber-400 tracking-widest">Leadership & Educators</h2>
-                        <p className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-                            Meet Our Team Leaders
-                        </p>
-                        <p className="text-slate-400 font-medium">Passionate educators, engineers, and mentors guiding your children every step of the way.</p>
-                        <div className="w-20 h-1.5 bg-amber-400 mx-auto rounded-full" />
+            {/* ─── 6. TEAM LEADERS SECTION ──────────────────────────── */}
+<section id="team" className="py-20 bg-slate-900 text-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <h2 className="text-xs uppercase font-black text-amber-400 tracking-widest">Leadership & Educators</h2>
+            <p className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                Meet Our Other Team Leaders
+            </p>
+            <p className="text-slate-400 font-medium">
+                Passionate educators, and mentors guiding your children every step of the way.
+            </p>
+            <div className="w-20 h-1.5 bg-amber-400 mx-auto rounded-full" />
+        </div>
+
+        {/* Team Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {TEAM_LEADERS.map((leader, index) => (
+                <div
+                    key={index}
+                    className="bg-blue-950 rounded-3xl border border-amber-400/30 overflow-hidden shadow-xl hover:border-amber-400 transition-all group flex flex-col sm:flex-row"
+                >
+                    {/* LEFT COLUMN: Image & Designation/Specialty */}
+                    <div className="sm:w-2/5 p-6 bg-blue-900/40 border-b sm:border-b-0 sm:border-r border-amber-400/20 flex flex-col items-center text-center shrink-0">
+                        {/* Image */}
+                        <div className="relative w-full aspect-square max-w-[220px] rounded-2xl overflow-hidden shadow-md">
+                            <img
+                                src={leader.img}
+                                alt={leader.name}
+                                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            />
+                        </div>
+
+                        {/* Designation & Specialty Below Image */}
+                        <div className="mt-4 w-full space-y-1">
+                            <p className="text-xs font-bold text-amber-300 uppercase tracking-wider">
+                                {leader.role}
+                            </p>
+                            {leader.specialty && (
+                                <div className="pt-2">
+                                    <span className="inline-block bg-amber-400 text-blue-950 font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-md">
+                                        {leader.specialty}
+                                    </span>
+                                </div>
+                            )}
+                        </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {TEAM_LEADERS.map((leader, index) => (
-                            <div
-                                key={index}
-                                className="bg-blue-950 rounded-3xl border border-amber-400/30 overflow-hidden shadow-xl hover:border-amber-400 transition-all flex flex-col justify-between group"
-                            >
-                                <div>
-                                    <div className="relative h-64 overflow-hidden">
-                                        <img
-                                            src={leader.img}
-                                            alt={leader.name}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                        />
-                                        <div className="absolute top-3 right-3 bg-amber-400 text-blue-950 font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-md">
-                                            {leader.specialty}
-                                        </div>
-                                    </div>
-                                    <div className="p-6 space-y-3">
-                                        <div>
-                                            <h3 className="text-xl font-black text-white group-hover:text-amber-400 transition-colors">
-                                                {leader.name}
-                                            </h3>
-                                            <p className="text-xs font-bold text-amber-300">{leader.role}</p>
-                                        </div>
-                                        <p className="text-slate-300 text-xs leading-relaxed">
-                                            {leader.bio}
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="px-6 pb-6 pt-2 border-t border-slate-800 flex items-center justify-between">
-                                    <span className="text-[11px] font-semibold text-slate-400">Connect:</span>
-                                    <div className="flex space-x-3">
-                                        <a
-                                            href={leader.facebook}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-blue-950 transition-colors"
-                                            title="Facebook Profile"
-                                        >
-                                            <FaFacebook className="w-4 h-4" />
-                                        </a>
-                                        <a
-                                            href={leader.linkedin}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-blue-950 transition-colors"
-                                            title="LinkedIn Profile"
-                                        >
-                                            <FaLinkedin className="w-4 h-4" />
-                                        </a>
-                                    </div>
-                                </div>
+                    {/* RIGHT COLUMN: Content, Bio & Connect Links */}
+                    <div className="sm:w-3/5 p-6 flex flex-col justify-between space-y-4">
+                        <div className="space-y-3">
+                            {/* Name */}
+                            <div>
+                                <h3 className="text-xl font-black text-white group-hover:text-amber-400 transition-colors">
+                                    {leader.name}
+                                </h3>
                             </div>
-                        ))}
+
+                            {/* Bio Content */}
+                            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                {leader.bio}
+                            </p>
+                        </div>
+
+                        {/* Social Footer */}
+                        <div className="pt-4 border-t border-blue-900/80 flex items-center justify-between">
+                            <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                                Connect:
+                            </span>
+                            <div className="flex space-x-2">
+                                {leader.facebook && (
+                                    <a
+                                        href={leader.facebook}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-blue-950 transition-colors"
+                                        title="Facebook Profile"
+                                    >
+                                        <FaFacebook className="w-4 h-4" />
+                                    </a>
+                                )}
+                                {leader.linkedin && (
+                                    <a
+                                        href={leader.linkedin}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-blue-950 transition-colors"
+                                        title="LinkedIn Profile"
+                                    >
+                                        <FaLinkedin className="w-4 h-4" />
+                                    </a>
+                                )}
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
+            ))}
+        </div>
+    </div>
+</section>
 
             {/* ─── 7. OUR EVENTS ────────────────────────────────────── */}
             <section id="events" className="py-20 bg-white">
