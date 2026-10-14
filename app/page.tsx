@@ -485,101 +485,101 @@ export default function DeansBrookSchoolLanding() {
 
 
             {/* ─── 4. DIRECTORS' MESSAGE ──────────────────────────── */}
-            <section id="directors" className="py-20 bg-navy/5">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                        <h2 className="text-xs uppercase font-extrabold text-mustard tracking-widest">Message from the Directors</h2>
-                        <p className="text-3xl sm:text-4xl font-black text-navy tracking-tight">
-                            FROM THE DIRECTORS’ DESK
-                        </p>
-                        <div className="w-16 h-1 bg-mustard mx-auto rounded-full" />
-                    </div>
+            <section id="directors" className="py-20 bg-slate-900">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <h2 className="text-xs uppercase font-extrabold text-amber-400 tracking-widest">Message from the Directors</h2>
+            <p className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                FROM THE DIRECTORS’ DESK
+            </p>
+            <div className="w-16 h-1 bg-amber-400 mx-auto rounded-full" />
+        </div>
 
-                    <div className="bg-white rounded-3xl shadow-xl border border-navy/10 overflow-hidden">
-                        <div className="p-8 sm:p-12 space-y-8">
-                            <div>
-                                <p className="text-2xl font-black text-navy">Paul & Caroline</p>
-                                <p className="text-mustard font-bold text-sm">Directors, Deansbrook Schools</p>
-                            </div>
+        <div className="bg-blue-950 rounded-3xl shadow-xl border border-amber-400/30 overflow-hidden">
+            <div className="p-8 sm:p-12 space-y-8">
+                <div>
+                    <p className="text-2xl font-black text-white">Paul & Caroline</p>
+                    <p className="text-amber-400 font-bold text-sm">Directors, Deansbrook Schools</p>
+                </div>
 
-                            <p className="text-lg font-semibold text-navy">
-                                It is our pleasure to welcome you to Deansbrook Schools.
-                            </p>
+                <p className="text-lg font-semibold text-white">
+                    It is our pleasure to welcome you to Deansbrook Schools.
+                </p>
 
-                            {/* Mission Section */}
-                            <div className="space-y-2 border-l-4 border-mustard pl-4">
-                                <h3 className="text-xl font-extrabold text-navy">Our Mission</h3>
-                                <p className="text-base sm:text-lg text-navy/80 leading-relaxed">
-                                    To provide diverse learning experiences that empower every student to reach their full potential and become responsible global citizens.
-                                </p>
-                            </div>
+                {/* Mission Section */}
+                <div className="space-y-2 border-l-4 border-amber-400 pl-4">
+                    <h3 className="text-xl font-extrabold text-white">Our Mission</h3>
+                    <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                        To provide diverse learning experiences that empower every student to reach their full potential and become responsible global citizens.
+                    </p>
+                </div>
 
-                            {/* Vision Section */}
-                            <div className="space-y-3">
-                                <h3 className="text-xl font-extrabold text-navy">Our Vision</h3>
-                                <p className="text-base text-navy/80">To be a leading school of choice through:</p>
-                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
-                                    {[
-                                        'Academic excellence',
-                                        'Holistic student development',
-                                        'Exceptional teaching and leadership',
-                                        'A safe, supportive learning environment',
-                                        'Strong parent and community engagement',
-                                        'Modern learning resources and infrastructure',
-                                        'Strong values, good governance and continuous innovation'
-                                    ].map((point, index) => (
-                                        <li key={index} className="flex items-start gap-2.5 text-navy/80 text-sm sm:text-base">
-                                            <span className="text-mustard font-bold mt-0.5">•</span>
-                                            <span>{point}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                {/* Vision Section */}
+                <div className="space-y-3">
+                    <h3 className="text-xl font-extrabold text-white">Our Vision</h3>
+                    <p className="text-base text-slate-300">To be a leading school of choice through:</p>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                        {[
+                            'Academic excellence',
+                            'Holistic student development',
+                            'Exceptional teaching and leadership',
+                            'A safe, supportive learning environment',
+                            'Strong parent and community engagement',
+                            'Modern learning resources and infrastructure',
+                            'Strong values, good governance and continuous innovation'
+                        ].map((point, index) => (
+                            <li key={index} className="flex items-start gap-2.5 text-slate-300 text-sm sm:text-base">
+                                <span className="text-amber-400 font-bold mt-0.5">•</span>
+                                <span>{point}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
 
-                            {/* Core Values Section */}
-                            <div className="space-y-3">
-                                <h3 className="text-xl font-extrabold text-navy">Our Core Values</h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {['Professionalism', 'Integrity', 'Teamwork', 'Trust', 'Excellence', 'Respect'].map((value, index) => (
-                                        <span
-                                            key={index}
-                                            className="px-3 py-1 bg-navy/5 text-navy font-semibold text-xs rounded-lg border border-navy/10"
-                                        >
-                                            {value}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Closing Messages */}
-                            <div className="space-y-4 pt-2 border-t border-navy/10 text-navy/80 text-base sm:text-lg leading-relaxed">
-                                <blockquote className="border-l-4 border-mustard/40 pl-4">
-                                    &ldquo;At Deansbrook Schools, we are committed to living these values in all our interactions. We celebrate academic achievement while nurturing creativity, character, leadership and personal growth.&rdquo;
-                                </blockquote>
-                                <blockquote className="border-l-4 border-mustard/20 pl-4">
-                                    &ldquo;As we look to the future, we remain committed to continuous improvement, innovation and excellence. Together with our students, parents and community, we look forward to building a strong foundation for lifelong success.&rdquo;
-                                </blockquote>
-                            </div>
-
-                            {/* Action Footer */}
-                            <div className="pt-4 border-t border-navy/10 flex flex-wrap items-center justify-between gap-4">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-10 h-10 rounded-full bg-mustard/10 flex items-center justify-center">
-                                        <School className="w-5 h-5 text-mustard" />
-                                    </div>
-                                    <span className="text-xs text-navy/60 font-medium">Deansbrook Schools • With warm regards, Paul & Caroline</span>
-                                </div>
-                                <button
-                                    onClick={() => openEnrolModal()}
-                                    className="ml-auto bg-mustard hover:bg-mustard/90 text-navy font-bold px-6 py-2 rounded-xl transition shadow-lg shadow-mustard/20 text-sm"
-                                >
-                                    Enrol Now
-                                </button>
-                            </div>
-                        </div>
+                {/* Core Values Section */}
+                <div className="space-y-3">
+                    <h3 className="text-xl font-extrabold text-white">Our Core Values</h3>
+                    <div className="flex flex-wrap gap-2">
+                        {['Professionalism', 'Integrity', 'Teamwork', 'Trust', 'Excellence', 'Respect'].map((value, index) => (
+                            <span
+                                key={index}
+                                className="px-3 py-1 bg-blue-900/40 text-amber-300 font-semibold text-xs rounded-lg border border-amber-400/20"
+                            >
+                                {value}
+                            </span>
+                        ))}
                     </div>
                 </div>
-            </section>
+
+                {/* Closing Messages */}
+                <div className="space-y-4 pt-2 border-t border-blue-900/80 text-slate-300 text-base sm:text-lg leading-relaxed">
+                    <blockquote className="border-l-4 border-amber-400/40 pl-4">
+                        &ldquo;At Deansbrook Schools, we are committed to living these values in all our interactions. We celebrate academic achievement while nurturing creativity, character, leadership and personal growth.&rdquo;
+                    </blockquote>
+                    <blockquote className="border-l-4 border-amber-400/20 pl-4">
+                        &ldquo;As we look to the future, we remain committed to continuous improvement, innovation and excellence. Together with our students, parents and community, we look forward to building a strong foundation for lifelong success.&rdquo;
+                    </blockquote>
+                </div>
+
+                {/* Action Footer */}
+                <div className="pt-4 border-t border-blue-900/80 flex flex-wrap items-center justify-between gap-4">
+                    <div className="flex items-center gap-2">
+                        <div className="w-10 h-10 rounded-full bg-amber-400/10 flex items-center justify-center">
+                            <School className="w-5 h-5 text-amber-400" />
+                        </div>
+                        <span className="text-xs text-slate-400 font-medium">Deansbrook Schools • With warm regards, Paul & Caroline</span>
+                    </div>
+                    <button
+                        onClick={() => openEnrolModal()}
+                        className="ml-auto bg-amber-400 hover:bg-amber-400/90 text-blue-950 font-bold px-6 py-2 rounded-xl transition shadow-lg shadow-amber-400/20 text-sm"
+                    >
+                        Enrol Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
@@ -660,7 +660,6 @@ export default function DeansBrookSchoolLanding() {
                 </div>
             </section>
 
-            {/* ─── 6. TEAM LEADERS SECTION ──────────────────────────── */}
             {/* ─── 6. TEAM LEADERS SECTION ──────────────────────────── */}
             <section id="team" className="py-20 bg-slate-900 text-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
