@@ -153,7 +153,7 @@ At Deansbrook School, we don’t just educate children—we build strong foundat
         facebook: "https://facebook.com",
         linkedin: "https://linkedin.com"
     },
-    
+
 ];
 
 const EVENTS = [
@@ -417,13 +417,13 @@ export default function DeansBrookSchoolLanding() {
                             <div>
                                 <h3 className="text-2xl font-extrabold text-navy">Our Vision</h3>
                                 <p className="text-navy/70 text-base leading-relaxed mt-2">
-                                    To be the preferred school of choice empowering students with knowledge, skills and values that enable them achieve their full potential and become responsible global citizens.
+                                    To be the premier school of choice.
                                 </p>
                             </div>
                             <div>
                                 <h3 className="text-2xl font-extrabold text-navy">Our Mission</h3>
                                 <p className="text-navy/70 text-base leading-relaxed mt-2">
-                                    We provide students with a broad range of learning experiences that enable them to develop their full potential in a caring environment where everyone is valued and respected.
+                                    To provide students with a broad range of learning experiences that enable them to develop their full potential and become responsible global citizens.
                                 </p>
                             </div>
                         </div>
@@ -437,7 +437,7 @@ export default function DeansBrookSchoolLanding() {
                                     </li>
                                     <li className="flex items-start space-x-3">
                                         <span className="text-mustard font-bold">•</span>
-                                        <span><strong>Kiembeni Campus</strong> – past the Police Post. Spacious classrooms, well‑equipped outdoor playground, and secured perimeter wall.</span>
+                                        <span><strong>Kiembeni Campus</strong> – Our kiembeni campus is located past the Kiembeni police post and it offers quality education in pre-school, primary school and junior secondary school supporting learners through their early years and secondary education.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -662,105 +662,105 @@ export default function DeansBrookSchoolLanding() {
 
             {/* ─── 6. TEAM LEADERS SECTION ──────────────────────────── */}
             {/* ─── 6. TEAM LEADERS SECTION ──────────────────────────── */}
-<section id="team" className="py-20 bg-slate-900 text-white">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <h2 className="text-xs uppercase font-black text-amber-400 tracking-widest">Leadership & Educators</h2>
-            <p className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-                Meet Our Other Team Leaders
-            </p>
-            <p className="text-slate-400 font-medium">
-                Passionate educators, and mentors guiding your children every step of the way.
-            </p>
-            <div className="w-20 h-1.5 bg-amber-400 mx-auto rounded-full" />
-        </div>
-
-        {/* Team Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {TEAM_LEADERS.map((leader, index) => (
-                <div
-                    key={index}
-                    className="bg-blue-950 rounded-3xl border border-amber-400/30 overflow-hidden shadow-xl hover:border-amber-400 transition-all group flex flex-col sm:flex-row"
-                >
-                    {/* LEFT COLUMN: Image & Designation/Specialty */}
-                    <div className="sm:w-2/5 p-6 bg-blue-900/40 border-b sm:border-b-0 sm:border-r border-amber-400/20 flex flex-col items-center text-center shrink-0">
-                        {/* Image */}
-                        <div className="relative w-full aspect-square max-w-[220px] rounded-2xl overflow-hidden shadow-md">
-                            <img
-                                src={leader.img}
-                                alt={leader.name}
-                                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                            />
-                        </div>
-
-                        {/* Designation & Specialty Below Image */}
-                        <div className="mt-4 w-full space-y-1">
-                            <p className="text-xs font-bold text-amber-300 uppercase tracking-wider">
-                                {leader.role}
-                            </p>
-                            {leader.specialty && (
-                                <div className="pt-2">
-                                    <span className="inline-block bg-amber-400 text-blue-950 font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-md">
-                                        {leader.specialty}
-                                    </span>
-                                </div>
-                            )}
-                        </div>
+            <section id="team" className="py-20 bg-slate-900 text-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Section Header */}
+                    <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                        <h2 className="text-xs uppercase font-black text-amber-400 tracking-widest">Leadership & Educators</h2>
+                        <p className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                            Meet Our Other Team Leaders
+                        </p>
+                        <p className="text-slate-400 font-medium">
+                            Passionate educators, and mentors guiding your children every step of the way.
+                        </p>
+                        <div className="w-20 h-1.5 bg-amber-400 mx-auto rounded-full" />
                     </div>
 
-                    {/* RIGHT COLUMN: Content, Bio & Connect Links */}
-                    <div className="sm:w-3/5 p-6 flex flex-col justify-between space-y-4">
-                        <div className="space-y-3">
-                            {/* Name */}
-                            <div>
-                                <h3 className="text-xl font-black text-white group-hover:text-amber-400 transition-colors">
-                                    {leader.name}
-                                </h3>
-                            </div>
+                    {/* Team Cards Grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        {TEAM_LEADERS.map((leader, index) => (
+                            <div
+                                key={index}
+                                className="bg-blue-950 rounded-3xl border border-amber-400/30 overflow-hidden shadow-xl hover:border-amber-400 transition-all group flex flex-col sm:flex-row"
+                            >
+                                {/* LEFT COLUMN: Image & Designation/Specialty */}
+                                <div className="sm:w-2/5 p-6 bg-blue-900/40 border-b sm:border-b-0 sm:border-r border-amber-400/20 flex flex-col items-center text-center shrink-0">
+                                    {/* Image */}
+                                    <div className="relative w-full aspect-square max-w-[220px] rounded-2xl overflow-hidden shadow-md">
+                                        <img
+                                            src={leader.img}
+                                            alt={leader.name}
+                                            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                    </div>
 
-                            {/* Bio Content */}
-                            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                                {leader.bio}
-                            </p>
-                        </div>
+                                    {/* Designation & Specialty Below Image */}
+                                    <div className="mt-4 w-full space-y-1">
+                                        <p className="text-xs font-bold text-amber-300 uppercase tracking-wider">
+                                            {leader.role}
+                                        </p>
+                                        {leader.specialty && (
+                                            <div className="pt-2">
+                                                <span className="inline-block bg-amber-400 text-blue-950 font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-md">
+                                                    {leader.specialty}
+                                                </span>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
 
-                        {/* Social Footer */}
-                        <div className="pt-4 border-t border-blue-900/80 flex items-center justify-between">
-                            <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
-                                Connect:
-                            </span>
-                            <div className="flex space-x-2">
-                                {leader.facebook && (
-                                    <a
-                                        href={leader.facebook}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-blue-950 transition-colors"
-                                        title="Facebook Profile"
-                                    >
-                                        <FaFacebook className="w-4 h-4" />
-                                    </a>
-                                )}
-                                {leader.linkedin && (
-                                    <a
-                                        href={leader.linkedin}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-blue-950 transition-colors"
-                                        title="LinkedIn Profile"
-                                    >
-                                        <FaLinkedin className="w-4 h-4" />
-                                    </a>
-                                )}
+                                {/* RIGHT COLUMN: Content, Bio & Connect Links */}
+                                <div className="sm:w-3/5 p-6 flex flex-col justify-between space-y-4">
+                                    <div className="space-y-3">
+                                        {/* Name */}
+                                        <div>
+                                            <h3 className="text-xl font-black text-white group-hover:text-amber-400 transition-colors">
+                                                {leader.name}
+                                            </h3>
+                                        </div>
+
+                                        {/* Bio Content */}
+                                        <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                            {leader.bio}
+                                        </p>
+                                    </div>
+
+                                    {/* Social Footer */}
+                                    <div className="pt-4 border-t border-blue-900/80 flex items-center justify-between">
+                                        <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                                            Connect:
+                                        </span>
+                                        <div className="flex space-x-2">
+                                            {leader.facebook && (
+                                                <a
+                                                    href={leader.facebook}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-blue-950 transition-colors"
+                                                    title="Facebook Profile"
+                                                >
+                                                    <FaFacebook className="w-4 h-4" />
+                                                </a>
+                                            )}
+                                            {leader.linkedin && (
+                                                <a
+                                                    href={leader.linkedin}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-blue-950 transition-colors"
+                                                    title="LinkedIn Profile"
+                                                >
+                                                    <FaLinkedin className="w-4 h-4" />
+                                                </a>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
-            ))}
-        </div>
-    </div>
-</section>
+            </section>
 
             {/* ─── 7. OUR EVENTS ────────────────────────────────────── */}
             <section id="events" className="py-20 bg-white">
@@ -961,23 +961,70 @@ export default function DeansBrookSchoolLanding() {
                                     </div>
                                 </div>
 
+                                {/* add target links to the contact info */}
+
                                 <div className="flex items-start space-x-4">
                                     <div className="p-3 bg-white/10 rounded-xl text-mustard mt-1">
                                         <Phone className="w-5 h-5" />
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-sm">Call / WhatsApp</h4>
-                                        <p className="text-white/50 text-xs mt-0.5">+254733576385</p>
+                                        <a
+                                            href="https://wa.me/254733576385"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-white/50 text-xs mt-0.5 hover:text-mustard transition-colors"
+                                        >
+                                            +254733576385
+                                        </a>
                                     </div>
                                 </div>
 
+                                {/* 1st email  */}
                                 <div className="flex items-start space-x-4">
                                     <div className="p-3 bg-white/10 rounded-xl text-mustard mt-1">
                                         <Mail className="w-5 h-5" />
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-sm">Email</h4>
-                                        <p className="text-white/50 text-xs mt-0.5">info@deansbrook.sc.ke</p>
+                                        <a
+                                            href="mailto:info@deansbrook.sc.ke"
+                                            className="text-white/50 text-xs mt-0.5 hover:text-mustard transition-colors"
+                                        >
+                                            info@deansbrook.sc.ke
+                                        </a>
+                                    </div>
+                                </div>
+
+                                {/* 2nd email  */}
+                                <div className="flex items-start space-x-4">
+                                    <div className="p-3 bg-white/10 rounded-xl text-mustard mt-1">
+                                        <Mail className="w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-sm">Email</h4>
+                                        <a
+                                            href="mailto:deansbrookkenya@gmail.com"
+                                            className="text-white/50 text-xs mt-0.5 hover:text-mustard transition-colors"
+                                        >
+                                            deansbrookkenya@gmail.com
+                                        </a>
+                                    </div>
+                                </div>
+
+                                {/* 3rd email  */}
+                                <div className="flex items-start space-x-4">
+                                    <div className="p-3 bg-white/10 rounded-xl text-mustard mt-1">
+                                        <Mail className="w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-sm">Email</h4>
+                                        <a
+                                            href="mailto:deansbrookkiembeni@gmail.com"
+                                            className="text-white/50 text-xs mt-0.5 hover:text-mustard transition-colors"
+                                        >
+                                            deansbrookkiembeni@gmail.com
+                                        </a>
                                     </div>
                                 </div>
                             </div>
