@@ -79,55 +79,98 @@ const CLASSES = [
     }
 ];
 
-const GALLERY_ITEMS = [
-    // Campus
-    { id: 1, type: 'campus', title: 'Main Campus', img: './landing.jpg' },
-    { id: 2, type: 'campus', title: 'Campus Green', img: './other_13.jpg' },
-    { id: 4, type: 'campus', title: 'Campus Walkway', img: './other_11.jpg' },
-    { id: 5, type: 'campus', title: 'Outdoor Area', img: './other_8.jpg' },
-    { id: 6, type: 'campus', title: 'School Grounds', img: './other_7.jpg' },
-    { id: 7, type: 'campus', title: 'Playground', img: './other_6.jpg' },
-    { id: 8, type: 'campus', title: 'Campus View', img: './other_5.jpg' },
-    { id: 9, type: 'campus', title: 'School Building', img: './other_4.jpg' },
-    { id: 17, type: 'campus', title: 'Campus Corner', img: './other_2.jpg' },
-    { id: 18, type: 'campus', title: 'Garden Area', img: './other_3.jpg' },
-    { id: 20, type: 'campus', title: 'Main Entrance', img: './other_1.jpg' },
-    { id: 22, type: 'campus', title: 'Campus Path', img: './other_17.jpg' },
-    { id: 21, type: 'campus', title: 'Sports Field', img: './other_15.jpg' },
-    { id: 28, type: 'campus', title: 'Another Campus View', img: './another.jpg' },
+type GalleryCategory = 'campus' | 'classroom' | 'events' | 'sports' | 'arts-culture' | 'student-life' | 'videos';
 
-    // Classroom
-    { id: 42, type: 'classroom', title: 'Classroom 1', img: './image1.jpeg' },
-    { id: 43, type: 'classroom', title: 'Classroom 2', img: './image2.jpeg' },
-    { id: 44, type: 'classroom', title: 'Classroom 3', img: './image3.jpeg' },
-    { id: 45, type: 'classroom', title: 'Classroom 4', img: './image4.jpeg' },
-    { id: 16, type: 'classroom', title: 'Early Learning Centre', img: './other_9.jpg' },
+type GalleryItem =
+    | {
+        id: number;
+        type: Exclude<GalleryCategory, 'videos'>;
+        title: string;
+        description: string;
+        img: string;
+    }
+    | {
+        id: number;
+        type: 'videos';
+        title: string;
+        description: string;
+        video: string;
+        poster: string;
+    };
 
-    // Events
-    { id: 3, type: 'events', title: 'Annual Sports Day', img: './sports_1.jpg' },
-    { id: 11, type: 'events', title: 'Football Training', img: './sports.jpg' },
-    { id: 12, type: 'events', title: 'Swimming Lessons', img: './swimming.jpg' },
-    { id: 13, type: 'events', title: 'Morning Assembly', img: './assembly.jpg' },
-    { id: 14, type: 'events', title: 'Debate Club', img: './debate.jpg' },
-    { id: 15, type: 'events', title: 'Educational Trip', img: './trip.jpg' },
-    { id: 19, type: 'events', title: 'Academic Awards', img: './awards.jpg' },
-    { id: 23, type: 'events', title: 'Event 1', img: './more_1.jpg' },
-    { id: 24, type: 'events', title: 'Event 2', img: './more_2.jpg' },
-    { id: 25, type: 'events', title: 'Event 3', img: './more_3.jpg' },
-    { id: 26, type: 'events', title: 'Event 4', img: './more_4.jpg' },
-    { id: 29, type: 'events', title: 'Festival 1', img: './festiv1.jpg' },
-    { id: 30, type: 'events', title: 'Festival 2', img: './festiv2.jpg' },
-    { id: 31, type: 'events', title: 'Festival 3', img: './festiv3.jpg' },
-    { id: 32, type: 'events', title: 'Festival 4', img: './festiv4.jpg' },
-    { id: 33, type: 'events', title: 'Festival 5', img: './festiv5.jpg' },
-    { id: 34, type: 'events', title: 'Festival 6', img: './festiv6.jpg' },
-    { id: 35, type: 'events', title: 'Festival 7', img: './festiv7.jpg' },
-    { id: 36, type: 'events', title: 'Festival 8', img: './festiv8.jpg' },
-    { id: 37, type: 'events', title: 'Festival 9', img: './festiv9.jpg' },
-    { id: 38, type: 'events', title: 'Festival 10', img: './festiv10.jpg' },
-    { id: 39, type: 'events', title: 'Festival 11', img: './festiv11.jpg' },
-    { id: 40, type: 'events', title: 'Festival 12', img: './festiv12.jpg' },
-    { id: 41, type: 'events', title: 'Festival 13', img: './festiv13.jpg' },
+const GALLERY_FILTERS: { id: 'all' | GalleryCategory; label: string }[] = [
+    { id: 'all', label: 'All' },
+    { id: 'events', label: 'Events' },
+    { id: 'classroom', label: 'Classroom' },
+    { id: 'sports', label: 'Sports' },
+    { id: 'arts-culture', label: 'Arts & Culture' },
+    { id: 'student-life', label: 'Student Life' },
+    { id: 'videos', label: 'Videos' },
+];
+
+const GALLERY_ITEMS: GalleryItem[] = [
+    { id: 1, type: 'campus', title: 'School Building', description: 'A view of the Deansbrook school building.', img: '/landing.jpg' },
+    { id: 2, type: 'campus', title: 'Kindergarten Entrance', description: 'The welcoming entrance to the Deansbrook Kindergarten.', img: '/other_9.jpg' },
+    { id: 3, type: 'campus', title: 'School Grounds', description: 'Green outdoor space around the school.', img: '/more_3.jpg' },
+    { id: 4, type: 'campus', title: 'Campus Building Details', description: 'A colourful view of the school buildings.', img: '/more_2.jpg' },
+
+    { id: 5, type: 'classroom', title: 'A Colourful Classroom Activity', description: 'Learners explore colours and patterns together at a classroom table.', img: '/image1.jpeg' },
+    { id: 6, type: 'classroom', title: 'Hands-on Learning', description: 'Young learners work together on a practical classroom activity.', img: '/image2.jpeg' },
+    { id: 7, type: 'classroom', title: 'Learning Through Play', description: 'Children practise early learning skills through a playful activity.', img: '/image3.jpeg' },
+    { id: 8, type: 'classroom', title: 'Creative Outdoor Learning', description: 'Children take part in a hands-on creative activity outdoors.', img: '/image4.jpeg' },
+    { id: 9, type: 'classroom', title: 'Classroom Collaboration', description: 'Learners share materials and ideas during a group activity.', img: '/other_7.jpg' },
+    { id: 10, type: 'classroom', title: 'Creative Class Activity', description: 'Young learners work together at a table on a classroom project.', img: '/other_17.jpg' },
+
+    { id: 11, type: 'events', title: 'School Assembly', description: 'Learners gather with their teachers for a school assembly.', img: '/assembly.jpg' },
+    { id: 12, type: 'events', title: 'Learners at Assembly', description: 'Students listen together during a school gathering.', img: '/learning1.jpg' },
+    { id: 13, type: 'events', title: 'Debate Club Gathering', description: 'Students take part in a debate and public-speaking session.', img: '/debate.jpg' },
+    { id: 14, type: 'events', title: 'School Awards Celebration', description: 'Learners celebrate an achievement together at school.', img: '/awards.jpg' },
+    { id: 15, type: 'events', title: 'Learning Beyond the Classroom', description: 'Students enjoy a shared learning experience outside the classroom.', img: '/trip.jpg' },
+    { id: 16, type: 'events', title: 'A Day Together at the Pool', description: 'Learners enjoy time together beside the swimming pool.', img: '/more_1.jpg' },
+    { id: 17, type: 'events', title: 'School Community Celebration', description: 'Children share a cheerful celebration with their school community.', img: '/arts.jpg' },
+    { id: 18, type: 'events', title: 'Celebrating Together', description: 'Learners gather for a colourful school celebration.', img: '/other_3.jpg' },
+    { id: 19, type: 'events', title: 'A Special School Celebration', description: 'Children take part in a joyful celebration at school.', img: '/other_4.jpg' },
+    { id: 20, type: 'events', title: 'Learners Celebrate', description: 'Students enjoy a lively school event with colourful displays.', img: '/other_5.jpg' },
+    { id: 21, type: 'events', title: 'Classroom Celebration', description: 'Children gather around a decorated table for a special celebration.', img: '/other_10.jpg' },
+    { id: 22, type: 'events', title: 'Sharing a Special Moment', description: 'Young learners celebrate together in a decorated classroom.', img: '/other_11.jpg' },
+    { id: 23, type: 'events', title: 'A Celebration for Young Learners', description: 'Children enjoy a cheerful celebration with balloons.', img: '/other_12.jpg' },
+    { id: 24, type: 'events', title: 'School Gathering', description: 'Learners come together for a group gathering at school.', img: '/other_13.jpg' },
+    { id: 25, type: 'events', title: 'Students Gather Outdoors', description: 'Students assemble together in the school grounds.', img: '/other_15.jpg' },
+    { id: 26, type: 'arts-culture', title: 'Music Festival Performance', description: 'Deansbrook learners perform at a music festival.', img: '/festiv1.jpg' },
+    { id: 27, type: 'events', title: 'Festival Day', description: 'Learners gather together at a school festival.', img: '/festiv9.jpg' },
+    { id: 28, type: 'events', title: 'Festival Gathering', description: 'Students and families come together for a school event.', img: '/festiv11.jpg' },
+
+    { id: 29, type: 'sports', title: 'Outdoor Sports Day', description: 'Children take part in outdoor games and activities.', img: '/sports_1.jpg' },
+    { id: 30, type: 'sports', title: 'Swimming Lessons', description: 'Learners practise swimming with support in the pool.', img: '/swimming.jpg' },
+    { id: 31, type: 'sports', title: 'Track and Field Activity', description: 'Students take part in a running activity on the school grounds.', img: '/other_14.jpg' },
+    { id: 32, type: 'sports', title: 'Outdoor Play', description: 'Children enjoy an active play session on the school field.', img: '/more_4.jpg' },
+    { id: 33, type: 'sports', title: 'Team Spirit', description: 'Students stand together outdoors in their school sports uniform.', img: '/sports.jpg' },
+
+    { id: 34, type: 'arts-culture', title: 'Music Festival', description: 'Deansbrook learners take the stage at a music festival.', img: '/festiv2.jpg' },
+    { id: 35, type: 'arts-culture', title: 'Festival Performers', description: 'Learners pose together after a festival performance.', img: '/festiv3.jpg' },
+    { id: 36, type: 'arts-culture', title: 'Celebrating Music', description: 'Students share a moment from their music festival performance.', img: '/festiv4.jpg' },
+    { id: 37, type: 'arts-culture', title: 'On the Festival Stage', description: 'Young performers represent Deansbrook at a music festival.', img: '/festiv5.jpg' },
+    { id: 38, type: 'arts-culture', title: 'Festival Memories', description: 'Learners celebrate their participation in a music festival.', img: '/festiv6.jpg' },
+    { id: 39, type: 'arts-culture', title: 'Music and Performance', description: 'Students gather for a group photo at a music festival.', img: '/festiv7.jpg' },
+    { id: 40, type: 'arts-culture', title: 'Young Performers', description: 'Deansbrook learners come together for a festival performance.', img: '/festiv8.jpg' },
+    { id: 41, type: 'arts-culture', title: 'Festival Showcase', description: 'Learners take part in a music and culture showcase.', img: '/festiv10.jpg' },
+    { id: 42, type: 'arts-culture', title: 'Festival Parade', description: 'Students celebrate music and culture in a colourful parade.', img: '/festiv12.jpg' },
+    { id: 43, type: 'arts-culture', title: 'Music Festival Highlights', description: 'Learners perform together at a school music festival.', img: '/festiv13.jpg' },
+
+    { id: 44, type: 'student-life', title: 'Friends Outdoors', description: 'Learners spend time together in the shade outdoors.', img: '/other_1.jpg' },
+    { id: 49, type: 'student-life', title: 'Playtime Together', description: 'Children enjoy a ride together on the playground.', img: '/other_2.jpg' },
+    { id: 45, type: 'student-life', title: 'Playground Fun', description: 'Children enjoy time together on the playground.', img: '/another.jpg' },
+    { id: 46, type: 'student-life', title: 'Students Together', description: 'Learners pose together in their school uniforms.', img: '/other_6.jpg' },
+    { id: 47, type: 'student-life', title: 'School Community', description: 'Students come together outdoors as a school community.', img: '/other_8.jpg' },
+    { id: 48, type: 'student-life', title: 'School Community Gathering', description: 'Learners gather together outside the school buildings.', img: '/other_16.jpg' },
+
+    { id: 50, type: 'videos', title: 'About Deansbrook', description: 'An introduction to Deansbrook School and its learning community.', video: '/videos/about_deansbrook.mp4', poster: '/landing.jpg' },
+    { id: 51, type: 'videos', title: 'Our School Staff', description: 'Meet the people who support teaching and learning at Deansbrook.', video: '/videos/staff_vocation.mp4', poster: '/principal.png' },
+    { id: 52, type: 'videos', title: 'Student Creativity', description: 'A look at creative activities and ideas from Deansbrook learners.', video: '/videos/students_creativity.mp4', poster: '/image4.jpeg' },
+    { id: 53, type: 'videos', title: 'Games & Sports', description: 'Students take part in games and sports at Deansbrook.', video: '/videos/students_games_sports.mp4', poster: '/sports_1.jpg' },
+    { id: 54, type: 'videos', title: 'Science Lab Practicals', description: 'Learners take part in practical science activities.', video: '/videos/students_lab_practicals.mp4', poster: '/image1.jpeg' },
+    { id: 55, type: 'videos', title: 'Learning in the Classroom', description: 'A glimpse of students learning together in class.', video: '/videos/students_in_class.mp4', poster: '/image3.jpeg' },
+    { id: 56, type: 'videos', title: 'Deansbrook School Moments', description: 'A video from the Deansbrook School community.', video: '/videos/VID-20261008-WA0009.mp4', poster: '/landing.jpg' },
 ];
 
 const TEAM_LEADERS = [
@@ -803,40 +846,66 @@ export default function DeansBrookSchoolLanding() {
                     </div>
 
                     <div className="flex flex-wrap justify-center gap-2 mb-10">
-                        {['all', 'campus', 'classroom', 'events'].map((tab) => (
+                        {GALLERY_FILTERS.map((tab) => (
                             <button
-                                key={tab}
-                                onClick={() => setGalleryFilter(tab)}
-                                className={`px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${galleryFilter === tab
+                                key={tab.id}
+                                type="button"
+                                aria-pressed={galleryFilter === tab.id}
+                                onClick={() => setGalleryFilter(tab.id)}
+                                className={`px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${galleryFilter === tab.id
                                     ? 'bg-mustard text-navy shadow-lg shadow-mustard/30'
                                     : 'bg-white text-navy/60 hover:bg-navy/10'
                                     }`}
                             >
-                                {tab}
+                                {tab.label}
                             </button>
                         ))}
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {filteredGallery.map((item) => (
-                            <div
-                                key={item.id}
-                                className="group relative overflow-hidden rounded-2xl shadow-md bg-navy/5 aspect-[4/3] cursor-pointer"
-                            >
-                                <img
-                                    src={item.img}
-                                    alt={item.title}
-                                    className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                                    <div>
-                                        <span className="text-xs font-bold text-mustard uppercase tracking-widest">{item.type}</span>
-                                        <h4 className="text-white font-bold text-lg">{item.title}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                    {filteredGallery.length > 0 ? (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {filteredGallery.map((item) => (
+                                item.type === 'videos' ? (
+                                    <article key={item.id} className="overflow-hidden rounded-2xl shadow-md bg-white">
+                                        <div className="aspect-video bg-black">
+                                            <video
+                                                controls
+                                                preload="metadata"
+                                                poster={item.poster}
+                                                aria-label={item.description}
+                                                className="w-full h-full object-contain"
+                                            >
+                                                <source src={item.video} type="video/mp4" />
+                                                Your browser does not support the video element.
+                                            </video>
+                                        </div>
+                                        <div className="p-5">
+                                            <span className="text-xs font-bold text-mustard uppercase tracking-widest">Video</span>
+                                            <h4 className="text-navy font-bold text-lg">{item.title}</h4>
+                                            <p className="text-sm text-navy/70 mt-1">{item.description}</p>
+                                        </div>
+                                    </article>
+                                ) : (
+                                    <article key={item.id} className="overflow-hidden rounded-2xl shadow-md bg-white">
+                                        <div className="group relative overflow-hidden aspect-[4/3] bg-navy/5">
+                                            <Image
+                                                src={item.img}
+                                                alt={item.description}
+                                                fill
+                                                loading={item.img === '/image4.jpeg' ? 'eager' : 'lazy'}
+                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+                                            />
+                                        </div>
+                                        <div className="p-5">
+                                            <span className="text-xs font-bold text-mustard uppercase tracking-widest">{GALLERY_FILTERS.find((filter) => filter.id === item.type)?.label}</span>
+                                            <h4 className="text-navy font-bold text-lg">{item.title}</h4>
+                                            <p className="text-sm text-navy/70 mt-1">{item.description}</p>
+                                        </div>
+                                    </article>
+                            )))}
+                        </div>
+                    ) : null}
                 </div>
             </section>
 
