@@ -202,19 +202,19 @@ At Deansbrook School, we don’t just educate children—we build strong foundat
 const EVENTS = [
     {
         title: "Annual Sports Day",
-        date: "15th August 2026",
+        date: "TBA",
         location: "Kiembeni Campus Grounds",
         desc: "Join us for a day of athletics, games, and family fun. All students and parents are invited."
     },
     {
         title: "Science Fair 2026",
-        date: "10th October 2026",
+        date: "TBA",
         location: "Bamburi Campus Hall",
         desc: "Students showcase their innovative projects. Winners will represent Deansbrook at the regional level."
     },
     {
         title: "Graduation Ceremony",
-        date: "5th December 2026",
+        date: "TBA",
         location: "Mombasa Convention Centre",
         desc: "Celebrating our Grade 6 graduates as they transition to secondary school."
     }
@@ -265,8 +265,21 @@ export default function DeansBrookSchoolLanding() {
 
     const handleContactSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        const form = e.target as HTMLFormElement;
+        const parentName = (form.querySelector('#parent-name') as HTMLInputElement)?.value || '';
+        const childAgeGrade = (form.querySelector('#child-age-grade') as HTMLInputElement)?.value || '';
+        const email = (form.querySelector('#email') as HTMLInputElement)?.value || '';
+        const phone = (form.querySelector('#phone') as HTMLInputElement)?.value || '';
+        const campusPreference = (form.querySelector('#campus-preference') as HTMLSelectElement)?.value || '';
+        const additionalMessage = (form.querySelector('#additional-message') as HTMLTextAreaElement)?.value || '';
+        const subject = 'Inquiry Submission';
+        const body= `Parent Name: ${parentName}\nChild's Age/Grade: ${childAgeGrade}\nEmail: ${email}\nPhone: ${phone}\nCampus Preference: ${campusPreference}\nAdditional Message: ${additionalMessage}`;
+        window.location.href = `mailto:deansbrookkiembeni@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         setFormSubmitted(true);
-        setTimeout(() => setFormSubmitted(false), 5000);
+        setTimeout (() => { 
+            setFormSubmitted(false);
+        }, 5000);
+
     };
 
     const handleEnrolSubmit = (e: React.FormEvent) => {
@@ -279,9 +292,9 @@ export default function DeansBrookSchoolLanding() {
         const email = (form.querySelector('#enrol-email') as HTMLInputElement)?.value || '';
         const phone = (form.querySelector('#enrol-phone') as HTMLInputElement)?.value || '';
 
-        const subject = 'New Registration / Enrolment Inquiry';
+        const subject = 'New Registration Submission';
         const body = `Child's Name: ${childName}\nChild's Age: ${childAge}\nFather's Name: ${fatherName}\nMother's Name: ${motherName}\nEmail: ${email}\nPhone: ${phone}\nClass Interested: ${selectedClass || 'Not specified'}`;
-        window.location.href = `mailto:schooldeans@go.ke?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = `mailto:deansbrookkiembeni@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
         setRegistrationSubmitted(true);
         setTimeout(() => {
@@ -910,7 +923,7 @@ export default function DeansBrookSchoolLanding() {
             </section>
 
             {/* ─── 9. SOCIAL MEDIA LINKS ────────────────────────────── */}
-            <section id="social" className="py-16 bg-white border-y border-navy/10">
+             <section id="social" className="py-16 bg-white border-y border-navy/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-2xl mx-auto space-y-4 mb-10">
                         <h2 className="text-xs uppercase font-extrabold text-mustard tracking-widest">Connect With Us</h2>
@@ -1109,6 +1122,7 @@ export default function DeansBrookSchoolLanding() {
                                         <label className="text-xs font-bold text-navy uppercase tracking-wider">Parent Full Name</label>
                                         <input
                                             type="text"
+                                            id='parent-name'
                                             required
                                             placeholder="e.g. Mwangi Onyango"
                                             className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm"
@@ -1118,6 +1132,7 @@ export default function DeansBrookSchoolLanding() {
                                         <label className="text-xs font-bold text-navy uppercase tracking-wider">Child's Age / Grade</label>
                                         <input
                                             type="text"
+                                            id='child-age-grade'
                                             required
                                             placeholder="e.g. 7 years, Grade 2"
                                             className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm"
@@ -1130,6 +1145,7 @@ export default function DeansBrookSchoolLanding() {
                                         <label className="text-xs font-bold text-navy uppercase tracking-wider">Email Address</label>
                                         <input
                                             type="email"
+                                            id='email'
                                             required
                                             placeholder="name@domain.com"
                                             className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm"
@@ -1139,6 +1155,7 @@ export default function DeansBrookSchoolLanding() {
                                         <label className="text-xs font-bold text-navy uppercase tracking-wider">Phone Number</label>
                                         <input
                                             type="tel"
+                                            id='phone'
                                             required
                                             placeholder="0712345678"
                                             className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm"
@@ -1148,7 +1165,7 @@ export default function DeansBrookSchoolLanding() {
 
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold text-navy uppercase tracking-wider">Campus Preference</label>
-                                    <select className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard bg-white transition text-sm">
+                                    <select id='campus-preference' className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard bg-white transition text-sm">
                                         <option>Bamburi Campus</option>
                                         <option>Kiembeni Campus</option>
                                         <option>Either</option>
@@ -1158,6 +1175,7 @@ export default function DeansBrookSchoolLanding() {
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold text-navy uppercase tracking-wider">Additional Message</label>
                                     <textarea
+                                        id='additional-message'
                                         rows={4}
                                         placeholder="Tell us about your child's interests or any specific questions..."
                                         className="w-full px-4 py-3 border border-navy/20 rounded-xl focus:outline-none focus:border-mustard transition text-sm resize-none"
@@ -1172,10 +1190,11 @@ export default function DeansBrookSchoolLanding() {
                                 </button>
 
                                 {formSubmitted && (
-                                    <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 text-sm font-semibold text-center animate-fade-in">
-                                        ✓ Awesome! We received your details. An admissions officer will contact you shortly.
+                                    <div className="mt-4 p-4 bg-green-100 text-green-700 rounded-xl">
+                                        Thank you! Your inquiry has been submitted successfully.
                                     </div>
                                 )}
+
                             </form>
                         </div>
 
