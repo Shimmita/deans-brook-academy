@@ -28,7 +28,7 @@ import {
 import React, { useState } from 'react';
 
 import Image from 'next/image';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa6';
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube, FaTiktok } from 'react-icons/fa6';
 
 // ─── DATA ──────────────────────────────────────────────────────────────
 
@@ -242,9 +242,10 @@ const FAQS = [
 const SOCIAL_LINKS = [
     { name: 'Facebook', icon: FaFacebook, url: 'https://web.facebook.com/Deansbrookschool?sfnsn=wa&mibextid=RUbZ1f&_rdc=1&_rdr', color: '#1877f2' },
     { name: 'Twitter', icon: FaTwitter, url: 'https://x.com/Deansbrook83254?t=aMY2a51Pg_v5_rqy7czhOQ&s=08', color: '#000000' },
-    { name: 'Instagram', icon: FaInstagram, url: '#', color: '#e4405f' },
-    { name: 'LinkedIn', icon: FaLinkedin, url: '#', color: '#0a66c2' },
+    { name: 'Instagram', icon: FaInstagram, url: 'https://www.instagram.com/deansbrook_school?psln=MXRtNDFueG5vY3Bxaw==', color: '#e4405f' },
+    { name: 'TikTok', icon: FaTiktok, url: 'https://www.tiktok.com/@deansbrookschoolkiembeni?_r=1&_t=ZS-9AtuYdyhaMe', color: '#000000' },
     { name: 'YouTube', icon: FaYoutube, url: '#', color: '#ff0000' },
+    { name: 'LinkedIn', icon: FaLinkedin, url: '#', color: '#0a66c2' },
 ];
 
 // ─── MAIN COMPONENT ────────────────────────────────────────────────────
