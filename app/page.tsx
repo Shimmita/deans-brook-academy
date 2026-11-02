@@ -5,6 +5,7 @@ import {
     Award,
     BookOpen,
     Calendar,
+    Calendar1Icon,
     CalendarDays,
     CheckCircle,
     ChevronDown,
@@ -28,7 +29,10 @@ import {
 import React, { useState } from 'react';
 
 import Image from 'next/image';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube, FaTiktok } from 'react-icons/fa6';
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube, FaTiktok, FaFootball, FaBasketball } from 'react-icons/fa6';
+import { FaFootballBall } from 'react-icons/fa';
+import { PiSoccerBall } from 'react-icons/pi';
+import { GiSoccerBall } from 'react-icons/gi';
 
 // ─── DATA ──────────────────────────────────────────────────────────────
 
@@ -109,68 +113,51 @@ const GALLERY_FILTERS: { id: 'all' | GalleryCategory; label: string }[] = [
 ];
 
 const GALLERY_ITEMS: GalleryItem[] = [
-    { id: 1, type: 'campus', title: 'School Building', description: 'A view of the Deansbrook school building.', img: '/landing.jpg' },
-    { id: 2, type: 'campus', title: 'Kindergarten Entrance', description: 'The welcoming entrance to the Deansbrook Kindergarten.', img: '/other_9.jpg' },
-    { id: 3, type: 'campus', title: 'School Grounds', description: 'Green outdoor space around the school.', img: '/more_3.jpg' },
-    { id: 4, type: 'campus', title: 'Campus Building Details', description: 'A colourful view of the school buildings.', img: '/more_2.jpg' },
+    { id: 1, type: 'campus', title: 'School Building', description: 'School building at Deansbrook Kiembeni', img: '/landing.jpg' },
+    { id: 2, type: 'campus', title: 'Kindergarten Entrance', description: 'Kindergarten entrance at Deansbrook Bamburi', img: '/other_9.jpg' },
+    { id: 3, type: 'campus', title: 'School Grounds', description: 'Green grounds at Deansbrook Kiembeni', img: '/more_3.jpg' },
+    { id: 4, type: 'campus', title: 'Campus Building Details', description: 'Colourful buildings at Deansbrook Bamburi', img: '/more_2.jpg' },
 
-    { id: 5, type: 'classroom', title: 'A Colourful Classroom Activity', description: 'Learners explore colours and patterns together at a classroom table.', img: '/image1.jpeg' },
-    { id: 6, type: 'classroom', title: 'Hands-on Learning', description: 'Young learners work together on a practical classroom activity.', img: '/image2.jpeg' },
-    { id: 7, type: 'classroom', title: 'Learning Through Play', description: 'Children practise early learning skills through a playful activity.', img: '/image3.jpeg' },
-    { id: 8, type: 'classroom', title: 'Creative Outdoor Learning', description: 'Children take part in a hands-on creative activity outdoors.', img: '/image4.jpeg' },
-    { id: 9, type: 'classroom', title: 'Classroom Collaboration', description: 'Learners share materials and ideas during a group activity.', img: '/other_7.jpg' },
-    { id: 10, type: 'classroom', title: 'Creative Class Activity', description: 'Young learners work together at a table on a classroom project.', img: '/other_17.jpg' },
+    { id: 5, type: 'classroom', title: 'A Colourful Classroom Activity', description: 'Colourful class activity at Deansbrook Kiembeni', img: '/image1.jpeg' },
+    { id: 6, type: 'classroom', title: 'Hands-on Learning', description: 'Hands on learning at Deansbrook Bamburi', img: '/image2.jpeg' },
+    { id: 7, type: 'classroom', title: 'Learning Through Play', description: 'Learning through play at Deansbrook Kiembeni', img: '/image3.jpeg' },
+    { id: 8, type: 'classroom', title: 'Creative Outdoor Learning', description: 'Creative outdoor learning at Deansbrook Bamburi', img: '/image4.jpeg' },
+    { id: 9, type: 'classroom', title: 'Classroom Collaboration', description: 'Classroom teamwork at Deansbrook Kiembeni', img: '/other_7.jpg' },
+    { id: 10, type: 'classroom', title: 'Creative Class Activity', description: 'Creative class project at Deansbrook Bamburi', img: '/other_17.jpg' },
 
-    { id: 11, type: 'events', title: 'School Assembly', description: 'Learners gather with their teachers for a school assembly.', img: '/assembly.jpg' },
-    { id: 12, type: 'events', title: 'Learners at Assembly', description: 'Students listen together during a school gathering.', img: '/learning1.jpg' },
-    { id: 13, type: 'events', title: 'Debate Club Gathering', description: 'Students take part in a debate and public-speaking session.', img: '/debate.jpg' },
-    { id: 14, type: 'events', title: 'School Awards Celebration', description: 'Learners celebrate an achievement together at school.', img: '/awards.jpg' },
-    { id: 15, type: 'events', title: 'Learning Beyond the Classroom', description: 'Students enjoy a shared learning experience outside the classroom.', img: '/trip.jpg' },
-    { id: 16, type: 'events', title: 'A Day Together at the Pool', description: 'Learners enjoy time together beside the swimming pool.', img: '/more_1.jpg' },
-    { id: 17, type: 'events', title: 'School Community Celebration', description: 'Children share a cheerful celebration with their school community.', img: '/arts.jpg' },
-    { id: 18, type: 'events', title: 'Celebrating Together', description: 'Learners gather for a colourful school celebration.', img: '/other_3.jpg' },
-    { id: 19, type: 'events', title: 'A Special School Celebration', description: 'Children take part in a joyful celebration at school.', img: '/other_4.jpg' },
-    { id: 20, type: 'events', title: 'Learners Celebrate', description: 'Students enjoy a lively school event with colourful displays.', img: '/other_5.jpg' },
-    { id: 21, type: 'events', title: 'Classroom Celebration', description: 'Children gather around a decorated table for a special celebration.', img: '/other_10.jpg' },
-    { id: 22, type: 'events', title: 'Sharing a Special Moment', description: 'Young learners celebrate together in a decorated classroom.', img: '/other_11.jpg' },
-    { id: 23, type: 'events', title: 'A Celebration for Young Learners', description: 'Children enjoy a cheerful celebration with balloons.', img: '/other_12.jpg' },
-    { id: 24, type: 'events', title: 'School Gathering', description: 'Learners come together for a group gathering at school.', img: '/other_13.jpg' },
-    { id: 25, type: 'events', title: 'Students Gather Outdoors', description: 'Students assemble together in the school grounds.', img: '/other_15.jpg' },
-    { id: 26, type: 'arts-culture', title: 'Music Festival Performance', description: 'Deansbrook learners perform at a music festival.', img: '/festiv1.jpg' },
-    { id: 27, type: 'events', title: 'Festival Day', description: 'Learners gather together at a school festival.', img: '/festiv9.jpg' },
-    { id: 28, type: 'events', title: 'Festival Gathering', description: 'Students and families come together for a school event.', img: '/festiv11.jpg' },
+    { id: 11, type: 'events', title: 'School Assembly', description: 'School assembly at Deansbrook Kiembeni', img: '/assembly.jpg' },
+    { id: 14, type: 'events', title: 'School Awards Celebration', description: 'Awards celebration at Deansbrook Bamburi', img: '/awards.jpg' },
+    { id: 15, type: 'events', title: 'Learning Beyond the Classroom', description: 'Learning outside class at Deansbrook Kiembeni', img: '/trip.jpg' },
+    { id: 16, type: 'events', title: 'A Day Together at the Pool', description: 'Pool day at Deansbrook Bamburi', img: '/more_1.jpg' },
+    { id: 17, type: 'events', title: 'School Community Celebration', description: 'School celebration at Deansbrook Kiembeni', img: '/arts.jpg' },
+    { id: 18, type: 'events', title: 'Celebrating Together', description: 'Celebrating together at Deansbrook Bamburi', img: '/other_3.jpg' },
+    { id: 19, type: 'events', title: 'A Special School Celebration', description: 'Special school celebration at Deansbrook Kiembeni', img: '/other_4.jpg' },
+    { id: 20, type: 'events', title: 'Learners Celebrate', description: 'School event at Deansbrook Bamburi', img: '/other_5.jpg' },
+    { id: 21, type: 'events', title: 'Classroom Celebration', description: 'Classroom celebration at Deansbrook Kiembeni', img: '/other_10.jpg' },
+    { id: 25, type: 'events', title: 'Students Gather Outdoors', description: 'Students gathered outdoors at Deansbrook Kiembeni', img: '/other_15.jpg' },
+    { id: 26, type: 'arts-culture', title: 'Music Festival Performance', description: 'Music festival performance at Deansbrook Bamburi', img: '/festiv1.jpg' },
+    { id: 27, type: 'events', title: 'Festival Day', description: 'Festival day at Deansbrook Kiembeni', img: '/festiv9.jpg' },
+    { id: 28, type: 'events', title: 'Festival Gathering', description: 'Festival gathering at Deansbrook Bamburi', img: '/festiv11.jpg' },
 
-    { id: 29, type: 'sports', title: 'Outdoor Sports Day', description: 'Children take part in outdoor games and activities.', img: '/sports_1.jpg' },
-    { id: 30, type: 'sports', title: 'Swimming Lessons', description: 'Learners practise swimming with support in the pool.', img: '/swimming.jpg' },
-    { id: 31, type: 'sports', title: 'Track and Field Activity', description: 'Students take part in a running activity on the school grounds.', img: '/other_14.jpg' },
-    { id: 32, type: 'sports', title: 'Outdoor Play', description: 'Children enjoy an active play session on the school field.', img: '/more_4.jpg' },
-    { id: 33, type: 'sports', title: 'Team Spirit', description: 'Students stand together outdoors in their school sports uniform.', img: '/sports.jpg' },
+    { id: 29, type: 'sports', title: 'Outdoor Sports Day', description: 'Outdoor sports day at Deansbrook Kiembeni', img: '/sports_1.jpg' },
+    { id: 30, type: 'sports', title: 'Swimming Lessons', description: 'Swimming lessons at Deansbrook Bamburi', img: '/swimming.jpg' },
+    { id: 31, type: 'sports', title: 'Track and Field Activity', description: 'Track activity at Deansbrook Kiembeni', img: '/other_14.jpg' },
+    { id: 32, type: 'sports', title: 'Outdoor Play', description: 'Outdoor play at Deansbrook Bamburi', img: '/more_4.jpg' },
+    { id: 33, type: 'sports', title: 'Team Spirit', description: 'Team spirit at Deansbrook Kiembeni', img: '/sports.jpg' },
 
-    { id: 34, type: 'arts-culture', title: 'Music Festival', description: 'Deansbrook learners take the stage at a music festival.', img: '/festiv2.jpg' },
-    { id: 35, type: 'arts-culture', title: 'Festival Performers', description: 'Learners pose together after a festival performance.', img: '/festiv3.jpg' },
-    { id: 36, type: 'arts-culture', title: 'Celebrating Music', description: 'Students share a moment from their music festival performance.', img: '/festiv4.jpg' },
-    { id: 37, type: 'arts-culture', title: 'On the Festival Stage', description: 'Young performers represent Deansbrook at a music festival.', img: '/festiv5.jpg' },
-    { id: 38, type: 'arts-culture', title: 'Festival Memories', description: 'Learners celebrate their participation in a music festival.', img: '/festiv6.jpg' },
-    { id: 39, type: 'arts-culture', title: 'Music and Performance', description: 'Students gather for a group photo at a music festival.', img: '/festiv7.jpg' },
-    { id: 40, type: 'arts-culture', title: 'Young Performers', description: 'Deansbrook learners come together for a festival performance.', img: '/festiv8.jpg' },
-    { id: 41, type: 'arts-culture', title: 'Festival Showcase', description: 'Learners take part in a music and culture showcase.', img: '/festiv10.jpg' },
-    { id: 42, type: 'arts-culture', title: 'Festival Parade', description: 'Students celebrate music and culture in a colourful parade.', img: '/festiv12.jpg' },
-    { id: 43, type: 'arts-culture', title: 'Music Festival Highlights', description: 'Learners perform together at a school music festival.', img: '/festiv13.jpg' },
+    { id: 44, type: 'student-life', title: 'Friends Outdoors', description: 'Friends outdoors at Deansbrook Bamburi', img: '/other_1.jpg' },
+    { id: 49, type: 'student-life', title: 'Playtime Together', description: 'Playtime together at Deansbrook Kiembeni', img: '/other_2.jpg' },
+    { id: 45, type: 'student-life', title: 'Playground Fun', description: 'Playground fun at Deansbrook Kiembeni', img: '/another.jpg' },
+    { id: 46, type: 'student-life', title: 'Students Together', description: 'School uniforms at Deansbrook Bamburi', img: '/other_6.jpg' },
+    { id: 47, type: 'student-life', title: 'School Community', description: 'School community outdoors at Deansbrook Kiembeni', img: '/other_8.jpg' },
+    { id: 48, type: 'student-life', title: 'School Community Gathering', description: 'Learners gathered outdoors at Deansbrook Bamburi', img: '/other_16.jpg' },
 
-    { id: 44, type: 'student-life', title: 'Friends Outdoors', description: 'Learners spend time together in the shade outdoors.', img: '/other_1.jpg' },
-    { id: 49, type: 'student-life', title: 'Playtime Together', description: 'Children enjoy a ride together on the playground.', img: '/other_2.jpg' },
-    { id: 45, type: 'student-life', title: 'Playground Fun', description: 'Children enjoy time together on the playground.', img: '/another.jpg' },
-    { id: 46, type: 'student-life', title: 'Students Together', description: 'Learners pose together in their school uniforms.', img: '/other_6.jpg' },
-    { id: 47, type: 'student-life', title: 'School Community', description: 'Students come together outdoors as a school community.', img: '/other_8.jpg' },
-    { id: 48, type: 'student-life', title: 'School Community Gathering', description: 'Learners gather together outside the school buildings.', img: '/other_16.jpg' },
-
-    { id: 50, type: 'videos', title: 'About Deansbrook', description: 'An introduction to Deansbrook School and its learning community.', video: '/videos/about_deansbrook.mp4', poster: '/landing.jpg' },
-    { id: 51, type: 'videos', title: 'Our School Staff', description: 'Meet the people who support teaching and learning at Deansbrook.', video: '/videos/staff_vocation.mp4', poster: '/principal.png' },
-    { id: 52, type: 'videos', title: 'Student Creativity', description: 'A look at creative activities and ideas from Deansbrook learners.', video: '/videos/students_creativity.mp4', poster: '/image4.jpeg' },
-    { id: 53, type: 'videos', title: 'Games & Sports', description: 'Students take part in games and sports at Deansbrook.', video: '/videos/students_games_sports.mp4', poster: '/sports_1.jpg' },
-    { id: 54, type: 'videos', title: 'Science Lab Practicals', description: 'Learners take part in practical science activities.', video: '/videos/students_lab_practicals.mp4', poster: '/image1.jpeg' },
-    { id: 55, type: 'videos', title: 'Learning in the Classroom', description: 'A glimpse of students learning together in class.', video: '/videos/students_in_class.mp4', poster: '/image3.jpeg' },
-    { id: 56, type: 'videos', title: 'Deansbrook School Moments', description: 'A video from the Deansbrook School community.', video: '/videos/VID-20261008-WA0009.mp4', poster: '/landing.jpg' },
+    { id: 50, type: 'videos', title: 'About Deansbrook', description: 'About Deansbrook Bamburi', video: '/videos/about_deansbrook.mp4', poster: '/landing.jpg' },
+    { id: 51, type: 'videos', title: 'Our School Staff', description: 'School staff at Deansbrook Kiembeni', video: '/videos/staff_vocation.mp4', poster: '/principal.png' },
+    { id: 52, type: 'videos', title: 'Student Creativity', description: 'Student creativity at Deansbrook Bamburi', video: '/videos/students_creativity.mp4', poster: '/image4.jpeg' },
+    { id: 53, type: 'videos', title: 'Games & Sports', description: 'Games and sports at Deansbrook Kiembeni', video: '/videos/students_games_sports.mp4', poster: '/sports_1.jpg' },
+    { id: 55, type: 'videos', title: 'Learning in the Classroom', description: 'Classroom learning at Deansbrook Kiembeni', video: '/videos/students_in_class.mp4', poster: '/image3.jpeg' },
+    { id: 56, type: 'videos', title: 'Deansbrook School Moments', description: 'School moments at Deansbrook Bamburi', video: '/videos/VID-20261008-WA0009.mp4', poster: '/landing.jpg' },
 ];
 
 const TEAM_LEADERS = [
@@ -203,20 +190,20 @@ const EVENTS = [
     {
         title: "Annual Sports Day",
         date: "TBA",
-        location: "Kiembeni Campus Grounds",
-        desc: "Join us for a day of athletics, games, and family fun. All students and parents are invited."
+        location: "",
+        desc: ""
     },
     {
-        title: "Science Fair 2026",
+        title: "Cultural Day",
         date: "TBA",
-        location: "Bamburi Campus Hall",
-        desc: "Students showcase their innovative projects. Winners will represent Deansbrook at the regional level."
+        location: "",
+        desc: ""
     },
     {
         title: "Graduation Ceremony",
         date: "TBA",
-        location: "Mombasa Convention Centre",
-        desc: "Celebrating our Grade 6 graduates as they transition to secondary school."
+        location: "",
+        desc: ""
     }
 ];
 
@@ -834,7 +821,11 @@ export default function DeansBrookSchoolLanding() {
                             <div key={idx} className="bg-navy/5 rounded-2xl p-6 border border-navy/10 hover:border-mustard/40 transition-all hover:shadow-lg group">
                                 <div className="flex items-start space-x-4">
                                     <div className="bg-mustard/10 p-3 rounded-xl">
-                                        <Calendar className="w-6 h-6 text-mustard" />
+                                        {event.title.includes('Sports') ? (
+                                            <GiSoccerBall className="w-6 h-6 text-mustard" />
+                                        ) : event.title.includes('Cultural') ? (
+                                            <Calendar1Icon className="w-6 h-6 text-mustard" />
+                                        ) : <GraduationCap className="w-6 h-6 text-mustard" />}
                                     </div>
                                     <div>
                                         <h4 className="font-extrabold text-navy text-lg">{event.title}</h4>
@@ -1057,7 +1048,41 @@ export default function DeansBrookSchoolLanding() {
                                             rel="noopener noreferrer"
                                             className="text-white/50 text-xs mt-0.5 hover:text-mustard transition-colors"
                                         >
-                                            +254733576385
+                                            +254733576385 Deans Bamburi
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start space-x-4">
+                                    <div className="p-3 bg-white/10 rounded-xl text-mustard mt-1">
+                                        <Phone className="w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-sm">Call / WhatsApp</h4>
+                                        <a
+                                            href="https://wa.me/254758975132"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-white/50 text-xs mt-0.5 hover:text-mustard transition-colors"
+                                        >
+                                            +254758975132 Deans Kiembeni
+                                        </a>
+                                    </div>
+                                </div>
+
+                                 <div className="flex items-start space-x-4">
+                                    <div className="p-3 bg-white/10 rounded-xl text-mustard mt-1">
+                                        <Phone className="w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-sm">Call / WhatsApp</h4>
+                                        <a
+                                            href="https://wa.me/254791043492"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-white/50 text-xs mt-0.5 hover:text-mustard transition-colors"
+                                        >
+                                            0791043492 Deans Kiembeni
                                         </a>
                                     </div>
                                 </div>
