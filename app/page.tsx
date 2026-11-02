@@ -1087,21 +1087,7 @@ export default function DeansBrookSchoolLanding() {
                                     </div>
                                 </div>
 
-                                {/* 1st email  */}
-                                <div className="flex items-start space-x-4">
-                                    <div className="p-3 bg-white/10 rounded-xl text-mustard mt-1">
-                                        <Mail className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-sm">Email</h4>
-                                        <a
-                                            href="mailto:info@deansbrook.sc.ke"
-                                            className="text-white/50 text-xs mt-0.5 hover:text-mustard transition-colors"
-                                        >
-                                            info@deansbrook.sc.ke
-                                        </a>
-                                    </div>
-                                </div>
+                 
 
                                 {/* 2nd email  */}
                                 <div className="flex items-start space-x-4">
